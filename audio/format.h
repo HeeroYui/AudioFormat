@@ -12,10 +12,13 @@
 namespace audio {
 	enum format {
 		format_unknow,
+		format_int8, //!< Signed 8 bits
 		format_int16, //!< Signed 16 bits
 		format_int16_on_int32, //!< Signed 16 bits on 32bits data (16 bit fixpoint value)
+		format_int24, //!< Signed 24 bits
 		format_int32, //!< Signed 32 bits
 		format_float, //!< Floating point (single precision)
+		format_double //!< Floating point (double precision)
 	};
 	std::string getFormatString(enum audio::format);
 	enum audio::format getFormatFromString(const std::string& _value);

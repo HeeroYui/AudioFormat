@@ -7,6 +7,20 @@
 #include <audio/channel.h>
 #include <audio/debug.h>
 
+static const char* listValues[] = {
+	"front-left",
+	"front-center",
+	"front-right",
+	"rear-left",
+	"rear-center",
+	"rear-right",
+	"surround-left",
+	"surround-right",
+	"sub-woofer",
+	"lfe"
+};
+static int32_t listValuesSize = sizeof(listValues)/sizeof(char*);
+
 
 std::ostream& audio::operator <<(std::ostream& _os, enum audio::channel _obj) {
 	_os << getChannelString(_obj);
@@ -14,38 +28,7 @@ std::ostream& audio::operator <<(std::ostream& _os, enum audio::channel _obj) {
 }
 
 std::string audio::getChannelString(enum audio::channel _value) {
-	switch (_value) {
-		case channel_frontLeft:
-			return "front-left";
-			break;
-		case channel_frontCenter:
-			return "front-center";
-			break;
-		case channel_frontRight:
-			return "front-right";
-			break;
-		case channel_rearLeft:
-			return "rear-left";
-			break;
-		case channel_rearCenter:
-			return "rear-center";
-			break;
-		case channel_rearRight:
-			return "rear-right";
-			break;
-		case channel_surroundLeft:
-			return "surround-left";
-			break;
-		case channel_surroundRight:
-			return "surround-right";
-			break;
-		case channel_subWoofer:
-			return "sub-woofer";
-			break;
-		case channel_lfe:
-			return "lfe";
-			break;
-	};
+	return listValues[_value];
 }
 
 std::string audio::getChannelString(const std::vector<enum audio::channel>& _value) {
@@ -103,28 +86,15 @@ std::vector<enum audio::channel> audio::getChannelFromString(const std::string& 
 	std::vector<enum audio::channel> out;
 	std::vector<std::string> listIO = split(_value, ';');
 	for (size_t iii=0; iii<listIO.size(); ++iii) {
-		if (listIO[iii] == "front-left") {
-			out.push_back(channel_frontLeft);
-		} else if (listIO[iii] == "front-right") {
-			out.push_back(channel_frontRight);
-		} else if (listIO[iii] == "front-center") {
-			out.push_back(channel_frontCenter);
-		} else if (listIO[iii] == "rear-left") {
-			out.push_back(channel_rearLeft);
-		} else if (listIO[iii] == "rear-right") {
-			out.push_back(channel_rearRight);
-		} else if (listIO[iii] == "rear-center") {
-			out.push_back(channel_rearCenter);
-		} else if (listIO[iii] == "surround-right") {
-			out.push_back(channel_surroundLeft);
-		} else if (listIO[iii] == "surround-left") {
-			out.push_back(channel_surroundRight);
-		} else if (listIO[iii] == "lfe") {
-			out.push_back(channel_lfe);
-		} else if (listIO[iii] == "sub-woofer") {
-			out.push_back(channel_subWoofer);
-		} else {
-			//ROS_ERROR("Unknow: '%s' in [front-left;front-right;front-center;rear-left;rear-right;rear-center;surround-right;surround-left;lfe;subwoofer]", listIO[iii].c_str());
+		int32_t tmpCount = out.size();
+		for (int32_t jjj=0; jjj<listValuesSize; ++jjj) {
+			if (listIO[iii] == listValues[jjj]) {
+				out.push_back(static_cast<enum audio::channel>(jjj));
+				break;
+			}
+		}
+		if (tmpCount == out.size()) {
+			AUDIO_ERROR("Can not convert : '" << _value << "' ...");
 		}
 	}
 	return out;

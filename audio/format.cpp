@@ -7,6 +7,18 @@
 #include <audio/debug.h>
 #include <audio/format.h>
 
+static const char* listValues[] = {
+	"unknow",
+	"int8",
+	"int16",
+	"int16_on_int32",
+	"int24",
+	"int32",
+	"float",
+	"double"
+};
+static int32_t listValuesSize = sizeof(listValues)/sizeof(char*);
+
 std::ostream& audio::operator <<(std::ostream& _os, enum audio::format _obj) {
 	_os << getFormatString(_obj);
 	return _os;
@@ -25,37 +37,14 @@ std::ostream& audio::operator <<(std::ostream& _os, const std::vector<enum audio
 }
 
 std::string audio::getFormatString(enum audio::format _value) {
-	switch (_value) {
-		case format_unknow:
-			return "format_unknow";
-			break;
-		case format_int16:
-			return "format_int16";
-			break;
-		case format_int16_on_int32:
-			return "format_int16_on_int32";
-			break;
-		case format_int32:
-			return "format_int32";
-			break;
-		case format_float:
-			return "format_float";
-			break;
-	};
+	return listValues[_value];
 }
 
 enum audio::format audio::getFormatFromString(const std::string& _value) {
-	if (_value == "format_int16") {
-		return format_int16;
-	}
-	if (_value == "format_int16_on_int32") {
-		return format_int16_on_int32;
-	}
-	if (_value == "format_int32") {
-		return format_int32;
-	}
-	if (_value == "format_float") {
-		return format_float;
+	for (int32_t iii=0; iii<listValuesSize; ++iii) {
+		if (_value == listValues[iii]) {
+			return static_cast<enum audio::format>(iii);
+		}
 	}
 	return format_unknow;
 }
