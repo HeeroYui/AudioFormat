@@ -20,10 +20,12 @@ namespace audio {
 		format_float, //!< Floating point (single precision)
 		format_double //!< Floating point (double precision)
 	};
-	std::string getFormatString(enum audio::format);
+	std::string getFormatString(enum audio::format _format);
 	enum audio::format getFormatFromString(const std::string& _value);
+	std::vector<enum audio::format> getListFormatFromString(const std::string& _value);
 	std::ostream& operator <<(std::ostream& _os, enum audio::format _obj);
 	std::ostream& operator <<(std::ostream& _os, const std::vector<enum audio::format>& _obj);
+	uint32_t getFormatBytes(enum audio::format _format);
 };
 
 

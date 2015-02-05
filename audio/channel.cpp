@@ -6,8 +6,10 @@
 
 #include <audio/channel.h>
 #include <audio/debug.h>
+#include <etk/stdTools.h>
 
 static const char* listValues[] = {
+	"unknow",
 	"front-left",
 	"front-center",
 	"front-right",
@@ -67,35 +69,21 @@ std::ostream& audio::operator <<(std::ostream& _os, const std::vector<std::vecto
 	return _os;
 }
 
-static std::vector<std::string> split(const std::string& _input, char _val) {
-	std::vector<std::string> list;
-	size_t lastStartPos = 0;
-	for(size_t iii=0; iii<_input.size(); iii++) {
-		if (_input[iii]==_val) {
-			list.push_back(std::string(_input, lastStartPos, iii - lastStartPos));
-			lastStartPos = iii+1;
+enum audio::channel audio::getChannelFromString(const std::string& _value) {
+	for (int32_t iii=0; iii<listValuesSize; ++iii) {
+		if (_value == listValues[iii]) {
+			return static_cast<enum audio::channel>(iii);
 		}
 	}
-	if (lastStartPos<_input.size()) {
-		list.push_back(std::string(_input, lastStartPos));
-	}
-	return list;
+	AUDIO_ERROR("Can not convert : '" << _value << "' ...");
+	return audio::channel_unknow;
 }
 
-std::vector<enum audio::channel> audio::getChannelFromString(const std::string& _value) {
+std::vector<enum audio::channel> audio::getListChannelFromString(const std::string& _value) {
 	std::vector<enum audio::channel> out;
-	std::vector<std::string> listIO = split(_value, ';');
-	for (size_t iii=0; iii<listIO.size(); ++iii) {
-		int32_t tmpCount = out.size();
-		for (int32_t jjj=0; jjj<listValuesSize; ++jjj) {
-			if (listIO[iii] == listValues[jjj]) {
-				out.push_back(static_cast<enum audio::channel>(jjj));
-				break;
-			}
-		}
-		if (tmpCount == out.size()) {
-			AUDIO_ERROR("Can not convert : '" << _value << "' ...");
-		}
+	std::vector<std::string> list = etk::split(_value, ';');
+	for (auto &it : list) {
+		out.push_back(getChannelFromString(it));
 	}
 	return out;
 }

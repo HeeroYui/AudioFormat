@@ -12,6 +12,7 @@
 
 namespace audio {
 	enum channel {
+		channel_unknow, //!< Error channel ...
 		channel_frontLeft, //!< channel Front Left
 		channel_frontCenter, //!< channel Front Center
 		channel_frontRight, //!< channel Front Right
@@ -25,7 +26,8 @@ namespace audio {
 	};
 	std::string getChannelString(enum audio::channel _obj);
 	std::string getChannelString(const std::vector<enum audio::channel>& _obj);
-	std::vector<enum audio::channel> getChannelFromString(const std::string& _value);
+	enum audio::channel getChannelFromString(const std::string& _value);
+	std::vector<enum audio::channel> getListChannelFromString(const std::string& _value);
 	std::ostream& operator <<(std::ostream& _os, enum audio::channel _obj);
 	std::ostream& operator <<(std::ostream& _os, const std::vector<enum audio::channel>& _obj);
 	std::ostream& operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel>>& _obj);

@@ -40,6 +40,7 @@ std::string audio::getFormatString(enum audio::format _value) {
 	return listValues[_value];
 }
 
+
 enum audio::format audio::getFormatFromString(const std::string& _value) {
 	for (int32_t iii=0; iii<listValuesSize; ++iii) {
 		if (_value == listValues[iii]) {
@@ -47,4 +48,33 @@ enum audio::format audio::getFormatFromString(const std::string& _value) {
 		}
 	}
 	return format_unknow;
+}
+
+std::vector<enum audio::format> audio::getListFormatFromString(const std::string& _value) {
+	std::vector<enum audio::format> out;
+	std::vector<std::string> list = etk::split(_value, ';');
+	for (auto &it : list) {
+		out.push_back(getFormatFromString(it));
+	}
+	return out;
+}
+
+uint32_t audio::getFormatBytes(audio::format _format) {
+	if (_format == audio::format_int8) {
+		return sizeof(int8_t);
+	} else if (_format == audio::format_int16) {
+		return sizeof(int16_t);
+	} else if (_format == audio::format_int16_on_int32) {
+		return sizeof(int32_t);
+	} else if (_format == audio::format_int24) {
+		return sizeof(int32_t);
+	} else if (_format == audio::format_int32) {
+		return sizeof(int32_t);
+	} else if (_format == audio::format_float) {
+		return sizeof(float);
+	} else if (_format == audio::format_double) {
+		return sizeof(double);
+	}
+	AUDIO_ERROR("undefined format : " << _format);
+	return 0;
 }
