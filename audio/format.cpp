@@ -10,10 +10,13 @@
 static const char* listValues[] = {
 	"unknow",
 	"int8",
+	"int8_on_int16",
 	"int16",
 	"int16_on_int32",
 	"int24",
 	"int32",
+	"int32_on_int64",
+	"int64",
 	"float",
 	"double"
 };

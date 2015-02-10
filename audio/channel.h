@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#ifndef __AUDIO_CORE_CHANNEL_H__
-#define __AUDIO_CORE_CHANNEL_H__
+#ifndef __AUDIO_CHANNEL_H__
+#define __AUDIO_CHANNEL_H__
 
 #include <string>
 #include <vector>
