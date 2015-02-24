@@ -30,7 +30,7 @@ namespace audio {
 	std::vector<enum audio::channel> getListChannelFromString(const std::string& _value);
 	std::ostream& operator <<(std::ostream& _os, enum audio::channel _obj);
 	std::ostream& operator <<(std::ostream& _os, const std::vector<enum audio::channel>& _obj);
-	std::ostream& operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel>>& _obj);
+	std::ostream& operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel> >& _obj);
 };
 
 

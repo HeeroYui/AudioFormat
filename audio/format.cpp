@@ -56,8 +56,8 @@ enum audio::format audio::getFormatFromString(const std::string& _value) {
 std::vector<enum audio::format> audio::getListFormatFromString(const std::string& _value) {
 	std::vector<enum audio::format> out;
 	std::vector<std::string> list = etk::split(_value, ';');
-	for (auto &it : list) {
-		out.push_back(getFormatFromString(it));
+	for (size_t iii=0; iii<list.size(); ++iii) {
+		out.push_back(getFormatFromString(list[iii]));
 	}
 	return out;
 }

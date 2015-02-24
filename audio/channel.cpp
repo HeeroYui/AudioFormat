@@ -57,7 +57,7 @@ std::ostream& audio::operator <<(std::ostream& _os, const std::vector<enum audio
 	return _os;
 }
 
-std::ostream& audio::operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel>>& _obj) {
+std::ostream& audio::operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel> >& _obj) {
 	_os << std::string("{");
 	for (size_t iii=0; iii<_obj.size(); ++iii) {
 		if (iii!=0) {
@@ -82,8 +82,8 @@ enum audio::channel audio::getChannelFromString(const std::string& _value) {
 std::vector<enum audio::channel> audio::getListChannelFromString(const std::string& _value) {
 	std::vector<enum audio::channel> out;
 	std::vector<std::string> list = etk::split(_value, ';');
-	for (auto &it : list) {
-		out.push_back(getChannelFromString(it));
+	for (size_t iii=0; iii<list.size(); ++iii) {
+		out.push_back(getChannelFromString(list[iii]));
 	}
 	return out;
 }
