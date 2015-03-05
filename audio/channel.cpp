@@ -87,3 +87,19 @@ std::vector<enum audio::channel> audio::getListChannelFromString(const std::stri
 	}
 	return out;
 }
+
+namespace etk {
+	template<> std::string to_string<enum audio::channel>(const enum audio::channel& _variable) {
+		return listValues[_variable];
+	}
+	template <> bool from_string<enum audio::channel>(enum audio::channel& _variableRet, const std::string& _value) {
+		for (int32_t iii=0; iii<listValuesSize; ++iii) {
+			if (_value == listValues[iii]) {
+				_variableRet = static_cast<enum audio::channel>(iii);
+				return true;
+			}
+		}
+		_variableRet = audio::channel_unknow;
+		return false;
+	}
+}

@@ -81,3 +81,20 @@ uint32_t audio::getFormatBytes(audio::format _format) {
 	AUDIO_ERROR("undefined format : " << _format);
 	return 0;
 }
+
+
+namespace etk {
+	template<> std::string to_string<enum audio::format>(const enum audio::format& _variable) {
+		return listValues[_variable];
+	}
+	template <> bool from_string<enum audio::format>(enum audio::format& _variableRet, const std::string& _value) {
+		for (int32_t iii=0; iii<listValuesSize; ++iii) {
+			if (_value == listValues[iii]) {
+				_variableRet = static_cast<enum audio::format>(iii);
+				return true;
+			}
+		}
+		_variableRet = audio::format_unknow;
+		return false;
+	}
+}
