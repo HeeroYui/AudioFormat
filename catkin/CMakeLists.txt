@@ -8,6 +8,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   etk
+  audio_msg
   )
 
 
@@ -45,7 +46,7 @@ add_library(${PROJECT_NAME}
   ../${PROJECT_NAME}/format.cpp
 )
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -DDEBUG_LEVEL=3 -DDEBUG=1 -D__CPP_VERSION__=2011")
+set(CMAKE_CXX_FLAGS "-std=c++11 -DDEBUG_LEVEL=3 -DDEBUG=1 -D__CPP_VERSION__=2011 -DETK_EXTERN_FRAMEWORK_ROS")
 
 
 ## Add cmake target dependencies of the executable/library

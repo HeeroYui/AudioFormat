@@ -103,3 +103,19 @@ namespace etk {
 		return false;
 	}
 }
+
+std::vector<uint8_t> audio::convertChannel(const std::vector<enum audio::channel>& _obj) {
+	std::vector<uint8_t> out;
+	for (size_t iii=0; iii<_obj.size(); ++iii) {
+		out.push_back(static_cast<uint8_t>(_obj[iii]));
+	}
+	return out;
+}
+
+std::vector<enum audio::channel> audio::convertChannel(const std::vector<uint8_t>& _obj) {
+	std::vector<enum audio::channel> out;
+	for (size_t iii=0; iii<_obj.size(); ++iii) {
+		out.push_back(static_cast<enum audio::channel>(_obj[iii]));
+	}
+	return out;
+}
