@@ -46,8 +46,6 @@ add_library(${PROJECT_NAME}
   ../${PROJECT_NAME}/format.cpp
 )
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -DDEBUG_LEVEL=3 -DDEBUG=1 -D__CPP_VERSION__=2011 -DETK_EXTERN_FRAMEWORK_ROS")
-
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
