@@ -13,15 +13,7 @@ namespace audio {
 	int32_t getLogId();
 };
 // TODO : Review this problem of multiple intanciation of "std::stringbuf sb"
-#define AUDIO_BASE(info,data) \
-	do { \
-		if (info <= etk::log::getLevel(audio::getLogId())) { \
-			std::stringbuf sb; \
-			std::ostream tmpStream(&sb); \
-			tmpStream << data; \
-			etk::log::logStream(audio::getLogId(), info, __LINE__, __class__, __func__, tmpStream); \
-		} \
-	} while(0)
+#define AUDIO_BASE(info,data) TK_LOG_BASE(audio::getLogId(),info,data)
 
 #define AUDIO_CRITICAL(data)      AUDIO_BASE(1, data)
 #define AUDIO_ERROR(data)         AUDIO_BASE(2, data)
