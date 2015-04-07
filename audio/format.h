@@ -20,6 +20,7 @@
 			format_int16          = audio_msg::AudioBuffer::FORMAT_INT16,
 			format_int16_on_int32 = audio_msg::AudioBuffer::FORMAT_INT16_ON_INT32,
 			format_int24          = audio_msg::AudioBuffer::FORMAT_INT24,
+			format_int24_on_int32 = audio_msg::AudioBuffer::FORMAT_INT24_ON_INT32,
 			format_int32          = audio_msg::AudioBuffer::FORMAT_INT32,
 			format_int32_on_int64 = audio_msg::AudioBuffer::FORMAT_INT32_ON_INT64,
 			format_int64          = audio_msg::AudioBuffer::FORMAT_INT64,
@@ -35,7 +36,8 @@
 			format_int8_on_int16, //!< Signed 8 bits on 16 bits data (8 bit fixpoint value)
 			format_int16, //!< Signed 16 bits
 			format_int16_on_int32, //!< Signed 16 bits on 32 bits data (16 bit fixpoint value)
-			format_int24, //!< Signed 24 bits on 32 bits (lower)
+			format_int24, //!< Signed 24 bits on 24 bits (lower)
+			format_int24_on_int32, //!< Signed 24 bits on 32 bits (lower)
 			format_int32, //!< Signed 32 bits
 			format_int32_on_int64, //!< Signed 32 bits on 64 bits data (32 bit fixpoint value)
 			format_int64, //!< Signed 64 bits
