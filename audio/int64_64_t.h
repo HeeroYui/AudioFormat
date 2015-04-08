@@ -118,7 +118,7 @@ namespace audio {
 			 *    *= operator
 			 *****************************************************/
 			const int64_64_t& operator*= (const int64_64_t& _obj) {
-				int16_t tmp = (m_data >> 32) * (_obj.m_data >> 32);
+				int16_t tmp = (m_data >> 31) * (_obj.m_data >> 32);
 				m_data = tmp;
 				return *this;
 			}
@@ -134,7 +134,7 @@ namespace audio {
 			 *    /= operator
 			 *****************************************************/
 			const int64_64_t& operator/= (const int64_64_t& _obj) {
-				int64_t tmp = (m_data << 32) / (_obj.m_data>>32);
+				int64_t tmp = (m_data << 31) / (_obj.m_data>>32);
 				m_data = tmp;
 				return *this;
 			}

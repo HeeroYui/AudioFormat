@@ -11,15 +11,15 @@
 
 
 TEST(TestBase, type_int8_8_t) {
-	audio::int8_8_t typeBase(16, 8);
+	audio::int8_8_t typeBase(16, 7);
 	EXPECT_EQ(typeBase.get(), 16);
-	typeBase.set(INT8_MIN, 8);
+	typeBase.set(INT8_MIN, 7);
 	EXPECT_EQ(typeBase.get(), INT8_MIN);
-	typeBase.set(INT8_MAX, 8);
+	typeBase.set(INT8_MAX, 7);
 	EXPECT_EQ(typeBase.get(), INT8_MAX);
-	typeBase.set(INT8_MAX+200, 8);
+	typeBase.set(INT8_MAX+200, 7);
 	EXPECT_EQ(typeBase.get(), INT8_MAX);
-	typeBase.set(INT8_MIN-200, 8);
+	typeBase.set(INT8_MIN-200, 7);
 	EXPECT_EQ(typeBase.get(), INT8_MIN);
 	typeBase.set(-125);
 	EXPECT_EQ(typeBase.get(), -125);
@@ -42,15 +42,15 @@ TEST(TestBase, type_int8_16_t) {
 
 
 TEST(TestBase, type_int16_16_t) {
-	audio::int16_16_t typeBase(16, 16);
+	audio::int16_16_t typeBase(16, 15);
 	EXPECT_EQ(typeBase.get(), 16);
-	typeBase.set(INT16_MIN, 16);
+	typeBase.set(INT16_MIN, 15);
 	EXPECT_EQ(typeBase.get(), INT16_MIN);
-	typeBase.set(INT16_MAX, 16);
+	typeBase.set(INT16_MAX, 15);
 	EXPECT_EQ(typeBase.get(), INT16_MAX);
-	typeBase.set(INT16_MAX+200, 16);
+	typeBase.set(INT16_MAX+200, 15);
 	EXPECT_EQ(typeBase.get(), INT16_MAX);
-	typeBase.set(INT16_MIN-200, 16);
+	typeBase.set(INT16_MIN-200, 15);
 	EXPECT_EQ(typeBase.get(), INT16_MIN);
 	typeBase.set(-250);
 	EXPECT_EQ(typeBase.get(), -250);
@@ -73,15 +73,15 @@ TEST(TestBase, type_int16_32_t) {
 
 
 TEST(TestBase, type_int24_24_t) {
-	audio::int24_24_t typeBase(16, 24);
+	audio::int24_24_t typeBase(16, 23);
 	EXPECT_EQ(typeBase.get(), 16);
-	typeBase.set(INT24_MIN, 24);
+	typeBase.set(INT24_MIN, 23);
 	EXPECT_EQ(typeBase.get(), INT24_MIN);
-	typeBase.set(INT24_MAX, 24);
+	typeBase.set(INT24_MAX, 23);
 	EXPECT_EQ(typeBase.get(), INT24_MAX);
-	typeBase.set(int64_t(INT24_MAX)+200, 24);
+	typeBase.set(int64_t(INT24_MAX)+200, 23);
 	EXPECT_EQ(typeBase.get(), INT24_MAX);
-	typeBase.set(int64_t(INT24_MIN)-200, 24);
+	typeBase.set(int64_t(INT24_MIN)-200, 23);
 	EXPECT_EQ(typeBase.get(), INT24_MIN);
 	typeBase.set(-250);
 	EXPECT_EQ(typeBase.get(), -250);
@@ -104,15 +104,15 @@ TEST(TestBase, type_int24_32_t) {
 }
 
 TEST(TestBase, type_int32_32_t) {
-	audio::int32_32_t typeBase(16, 32);
+	audio::int32_32_t typeBase(16, 31);
 	EXPECT_EQ(typeBase.get(), 16);
-	typeBase.set(INT32_MIN, 32);
+	typeBase.set(INT32_MIN, 31);
 	EXPECT_EQ(typeBase.get(), INT32_MIN);
-	typeBase.set(INT32_MAX, 32);
+	typeBase.set(INT32_MAX, 31);
 	EXPECT_EQ(typeBase.get(), INT32_MAX);
-	typeBase.set(int64_t(INT32_MAX)+200, 32);
+	typeBase.set(int64_t(INT32_MAX)+200, 31);
 	EXPECT_EQ(typeBase.get(), INT32_MAX);
-	typeBase.set(int64_t(INT32_MIN)-200, 32);
+	typeBase.set(int64_t(INT32_MIN)-200, 31);
 	EXPECT_EQ(typeBase.get(), INT32_MIN);
 	typeBase.set(-250);
 	EXPECT_EQ(typeBase.get(), -250);
@@ -130,11 +130,11 @@ TEST(TestBase, type_int32_64_t) {
 }
 
 TEST(TestBase, type_int64_64_t) {
-	audio::int64_64_t typeBase(16, 64);
+	audio::int64_64_t typeBase(16, 63);
 	EXPECT_EQ(typeBase.get(), 16);
-	typeBase.set(INT64_MIN, 64);
+	typeBase.set(INT64_MIN, 63);
 	EXPECT_EQ(typeBase.get(), INT64_MIN);
-	typeBase.set(INT64_MAX, 64);
+	typeBase.set(INT64_MAX, 63);
 	EXPECT_EQ(typeBase.get(), INT64_MAX);
 	typeBase.set(-250);
 	EXPECT_EQ(typeBase.get(), -250);

@@ -12,6 +12,11 @@
 #include <audio/debug.h>
 
 namespace audio {
+	/**
+	 * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+	 * |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10| 9| 8| 7| 6| 5| 4| 3| 2| 1| 0|
+	 * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+	 */
 	class int8_8_t {
 		private:
 			int8_t m_data;
@@ -119,7 +124,7 @@ namespace audio {
 			 *****************************************************/
 			const int8_8_t& operator*= (const int8_8_t& _obj) {
 				int16_t tmp = int16_t(m_data) * int16_t(_obj.m_data);
-				m_data = int8_t(tmp >> 8);
+				m_data = int8_t(tmp >> 7);
 				return *this;
 			}
 			/* ****************************************************
@@ -134,7 +139,7 @@ namespace audio {
 			 *    /= operator
 			 *****************************************************/
 			const int8_8_t& operator/= (const int8_8_t& _obj) {
-				int16_t tmp = (int16_t(m_data) << 8) / int16_t(_obj.m_data);
+				int16_t tmp = (int16_t(m_data) << 7) / int16_t(_obj.m_data);
 				m_data = int8_t(tmp);
 				return *this;
 			}

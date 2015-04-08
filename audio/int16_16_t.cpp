@@ -4,10 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
 #include <audio/int16_16_t.h>
-
-
+#include <audio/debug.h>
 
 audio::int16_16_t::int16_16_t(const audio::int8_8_t& _val) {
 	m_data = int16_t(_val.get()) << 8;
@@ -86,7 +84,7 @@ void audio::int16_16_t::set(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::int16_16_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << ":0.16=";
+	_os << "[" << etk::to_string(_obj.get()) << ":0.15=";
 	_os << etk::to_string(double(_obj.get())/double(INT16_MAX));
 	_os << "]";
 	return _os;

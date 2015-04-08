@@ -98,13 +98,13 @@ audio::int64_64_t::int64_64_t(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 void audio::int64_64_t::set(int64_t _value, int32_t _flotingPointPosition) {
-	int64_t val = _value << (64-_flotingPointPosition);
+	int64_t val = _value << (63-_flotingPointPosition);
 	m_data = std::avg(int64_t(INT64_MIN), val, int64_t(INT64_MAX));
 }
 
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::int64_64_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << ":0.64=";
+	_os << "[" << etk::to_string(_obj.get()) << ":0.63=";
 	_os << etk::to_string(double(_obj.get())/double(INT64_MAX));
 	_os << "]";
 	return _os;

@@ -13,8 +13,13 @@ def create(target):
 		'test/debug.cpp',
 		'test/main.cpp',
 		'test/base.cpp',
+		'test/test_int8_8.cpp',
+		'test/test_int8_16.cpp',
 		'test/test_int16_16.cpp',
 		'test/test_int16_32.cpp',
+		'test/test_int32_32.cpp',
+		'test/test_int32_64.cpp',
+		'test/test_int64_64.cpp',
 		'test/test_float.cpp'
 		])
 	myModule.add_module_depend(['audio', 'gtest'])

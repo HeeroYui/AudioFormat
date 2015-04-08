@@ -12,6 +12,11 @@
 #include <audio/debug.h>
 
 namespace audio {
+	/**
+	 * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+	 * |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10| 9| 8| 7| 6| 5| 4| 3| 2| 1| 0|
+	 * +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+	 */
 	class int32_32_t {
 		private:
 			int32_t m_data;
@@ -118,8 +123,8 @@ namespace audio {
 			 *    *= operator
 			 *****************************************************/
 			const int32_32_t& operator*= (const int32_32_t& _obj) {
-				int64_t tmp = int32_t(m_data) * int32_t(_obj.m_data);
-				m_data = int32_t(tmp >> 32);
+				int64_t tmp = int64_t(m_data) * int64_t(_obj.m_data) + (1LL<<30);
+				m_data = int32_t(tmp >> 31);
 				return *this;
 			}
 			/* ****************************************************
@@ -134,7 +139,7 @@ namespace audio {
 			 *    /= operator
 			 *****************************************************/
 			const int32_32_t& operator/= (const int32_32_t& _obj) {
-				int64_t tmp = (int64_t(m_data) << 32) / int32_t(_obj.m_data);
+				int64_t tmp = (int64_t(m_data) << 31) / int64_t(_obj.m_data);
 				m_data = int32_t(tmp);
 				return *this;
 			}

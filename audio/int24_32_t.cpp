@@ -77,7 +77,7 @@ audio::int24_32_t::int24_32_t(const audio::float_t& _val) {
 	m_data = int32_t(std::avg(float(INT8_MIN),
 	                          _val.get(),
 	                          float(INT8_MAX)
-	                          ) * float(INT24_MAX)
+	                          ) * float(INT24_MAX) * 2.0f
 	                 );
 }
 
@@ -85,7 +85,7 @@ audio::int24_32_t::int24_32_t(const audio::double_t& _val) {
 	m_data = int32_t(std::avg(-1.0,
 	                          _val.get(),
 	                          1.0
-	                          ) * double(INT24_MAX)
+	                          ) * double(INT24_MAX) * 2.0
 	                 );
 }
 
@@ -100,8 +100,8 @@ void audio::int24_32_t::set(int64_t _value, int32_t _flotingPointPosition) {
 
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::int24_32_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << "8:24=";
-	_os << etk::to_string(double(_obj.get())/double(INT24_MAX));
+	_os << "[" << etk::to_string(_obj.get()) << "7:24=";
+	_os << etk::to_string(double(_obj.get())/double(INT24_MAX)*0.5);
 	_os << "]";
 	return _os;
 }

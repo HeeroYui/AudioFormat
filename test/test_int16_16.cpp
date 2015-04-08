@@ -22,11 +22,8 @@ TEST(TestInt16_16, basicOperator) {
 	out *= typeBase;
 	EXPECT_EQ(out.get(), 0);
 	out = audio::float_t(0.3);
-	APPL_INFO(" data = " << out);
 	out += audio::float_t(0.3);
-	APPL_INFO(" data = " << out);
 	EXPECT_EQ(out.get(), audio::int16_16_t(audio::float_t(0.6)).get());
 	out *= audio::float_t(0.3);
-	APPL_INFO(" data = " << out);
 	EXPECT_EQ(out.get(), audio::int16_16_t(audio::float_t(0.18)).get());
 }

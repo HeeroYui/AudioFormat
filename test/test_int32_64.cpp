@@ -10,12 +10,12 @@
 
 
 
-TEST(TestInt16_32, basicOperator) {
-	audio::int16_32_t typeBase(16);
-	audio::int16_32_t out(1, 0);
+TEST(TestInt32_64, basicOperator) {
+	audio::int32_64_t typeBase(16);
+	audio::int32_64_t out(1, 0);
 	
 	APPL_INFO(" data = " << out);
-	EXPECT_EQ(out.get(), ((1<<16)));
+	EXPECT_EQ(out.get(), (int64_t(INT32_MAX)+1)*2);
 	out *= 16;
 	APPL_INFO(" data = " << out);
 	EXPECT_EQ(out.get(), 16);
@@ -25,14 +25,14 @@ TEST(TestInt16_32, basicOperator) {
 	out *= typeBase;
 	APPL_INFO(" data = " << out);
 	EXPECT_EQ(out.get(), 0);
-	out = audio::float_t(0.3);
+	out = audio::double_t(0.3);
 	APPL_INFO(" data = " << out);
-	out += audio::float_t(0.3);
+	out += audio::double_t(0.3);
 	APPL_INFO(" data = " << out);
-	EXPECT_EQ(out.get(), audio::int16_32_t(audio::float_t(0.6)).get());
-	out *= audio::float_t(0.3);
+	EXPECT_EQ(out.get(), audio::int32_64_t(audio::double_t(0.6)).get());
+	out *= audio::double_t(0.3);
 	APPL_INFO(" data = " << out);
-	EXPECT_EQ(out.get(), audio::int16_32_t(audio::float_t(0.18)).get());
+	EXPECT_EQ(out.get(), audio::int32_64_t(audio::double_t(0.18)).get());
 }
 
 
