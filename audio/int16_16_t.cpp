@@ -64,7 +64,7 @@ audio::int16_16_t::int16_16_t(const audio::float_t& _val) {
 	m_data = int16_t(std::avg(-1.0f,
 	                          _val.get(),
 	                          1.0f
-	                          ) * 32767.0f
+	                          ) * float(INT16_MAX)
 	                 );
 }
 
@@ -72,15 +72,23 @@ audio::int16_16_t::int16_16_t(const audio::double_t& _val) {
 	m_data = int16_t(std::avg(-1.0,
 	                          _val.get(),
 	                          1.0
-	                          ) * 32767.0
+	                          ) * double(INT16_MAX)
 	                 );
 }
 
-audio::int16_16_t::int16_16_t(int32_t _value, int32_t _flotingPointPosition) {
+audio::int16_16_t::int16_16_t(int64_t _value, int32_t _flotingPointPosition) {
 	set(_value, _flotingPointPosition);
 }
 
-void audio::int16_16_t::set(int32_t _value, int32_t _flotingPointPosition) {
-	int64_t val = _value << (16-_flotingPointPosition);
+void audio::int16_16_t::set(int64_t _value, int32_t _flotingPointPosition) {
+	int64_t val = _value << (15-_flotingPointPosition);
 	m_data = std::avg(int64_t(INT16_MIN), val, int64_t(INT16_MAX));
 }
+
+std::ostream& audio::operator <<(std::ostream& _os, const audio::int16_16_t& _obj) {
+	_os << "[" << etk::to_string(_obj.get()) << ":0.16=";
+	_os << etk::to_string(double(_obj.get())/double(INT16_MAX));
+	_os << "]";
+	return _os;
+}
+

@@ -14,6 +14,7 @@ static const char* listValues[] = {
 	"int16",
 	"int16-on-int32",
 	"int24",
+	"int24-on-int32",
 	"int32",
 	"int32-on-int64",
 	"int64",

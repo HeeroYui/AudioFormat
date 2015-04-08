@@ -12,9 +12,12 @@
 namespace audio {
 	class int24_24_t {
 		private:
-			int8_t m_data[3];
+			uint8_t m_data[3];
 		public:
 			int24_24_t() {}
+			int24_24_t(int32_t _value) {
+				set(_value);
+			}
 			// transformation operator:
 			int24_24_t(const audio::int8_8_t& _val);
 			int24_24_t(const audio::int8_16_t& _val);
@@ -28,10 +31,12 @@ namespace audio {
 			int24_24_t(const audio::float_t& _val);
 			int24_24_t(const audio::double_t& _val);
 			// set operator
-			int24_24_t(int32_t _value, int32_t _flotingPointPosition);
-			void set(int32_t _value, int32_t _flotingPointPosition);
+			int24_24_t(int64_t _value, int32_t _flotingPointPosition);
+			void set(int64_t _value, int32_t _flotingPointPosition);
+			void set(int32_t _value);
 			int32_t get() const;
 	};
+	std::ostream& operator <<(std::ostream& _os, const audio::int24_24_t& _obj);
 }
 
 #endif

@@ -64,11 +64,11 @@ audio::int24_24_t::int24_24_t(const audio::double_t& _val) {
 }
 
 // set operator
-audio::int24_24_t::int24_24_t(int32_t _value, int32_t _flotingPointPosition) {
+audio::int24_24_t::int24_24_t(int64_t _value, int32_t _flotingPointPosition) {
 	set(_value, _flotingPointPosition);
 }
 
-void audio::int24_24_t::set(int32_t _value, int32_t _flotingPointPosition) {
+void audio::int24_24_t::set(int64_t _value, int32_t _flotingPointPosition) {
 	int64_t val = _value << (24-_flotingPointPosition);
 	val = std::avg(int64_t(INT24_MIN), val, int64_t(INT24_MAX));
 	m_data[0] = (val & 0x000000ff);
@@ -76,10 +76,23 @@ void audio::int24_24_t::set(int32_t _value, int32_t _flotingPointPosition) {
 	m_data[2] = (val & 0x00ff0000) >> 16;
 }
 
+void audio::int24_24_t::set(int32_t _value) {
+	m_data[0] = (_value & 0x000000ff);
+	m_data[1] = (_value & 0x0000ff00) >> 8;
+	m_data[2] = (_value & 0x00ff0000) >> 16;
+}
+
 int32_t audio::int24_24_t::get() const {
 	int32_t val = 0;
 	val += int32_t(m_data[0]);
 	val += int32_t(m_data[1]) << 8;
-	val += int32_t(m_data[2]) << 16;
+	val += (int32_t(m_data[2]) << 24) >> 8;
 	return val;
+}
+
+std::ostream& audio::operator <<(std::ostream& _os, const audio::int24_24_t& _obj) {
+	_os << "[" << etk::to_string(_obj.get()) << ":0.24=";
+	_os << etk::to_string(double(_obj.get())/double(INT24_MAX));
+	_os << "]";
+	return _os;
 }

@@ -20,9 +20,21 @@ namespace audio {
 	class float_t;
 	class double_t;
 }
+/*
+namespace audio {
+	const minInt64[65];
+	const maxInt64[65];
+	const minIntFloat[65];
+	const maxIntFloat[65];
+	const minIntDouble[65];
+	const maxIntDouble[65];
+}
+*/
+#define INT24_MIN 0xFFFFFFFFFF800000LL
+#define INT24_MAX 0x00000000007FFFFFLL
 
-#define INT24_MIN 0xFF800000
-#define INT24_MAX 0x007FFFFF
+#define INT40_MIN 0xFFFFFF8000000000LL
+#define INT40_MAX 0x0000007FFFFFFFFFLL
 
 #define INT56_MIN 0xFFFF800000000000LL
 #define INT56_MAX 0x00007FFFFFFFFFFFLL
