@@ -141,24 +141,24 @@ TEST(TestBase, type_int64_64_t) {
 }
 
 TEST(TestBase, type_float_t) {
-	audio::float_t typeBase(16, 1);
+	audio::float_t typeBase(16, 0);
 	EXPECT_EQ(typeBase.get(), 16.0);
-	typeBase.set(INT32_MIN, 1);
+	typeBase.set(INT32_MIN, 0);
 	EXPECT_EQ(typeBase.get(), INT32_MIN);
-	typeBase.set(INT32_MAX, 1);
+	typeBase.set(INT32_MAX, 0);
 	EXPECT_EQ(typeBase.get(), INT32_MAX);
-	typeBase.set(int64_t(INT32_MAX)+200, 1);
+	typeBase.set(int64_t(INT32_MAX)+200, 0);
 	EXPECT_EQ(typeBase.get(), 2.147483840e+09f); // Note : floating point error
-	typeBase.set(int64_t(INT32_MIN)-200, 1);
+	typeBase.set(int64_t(INT32_MIN)-200, 0);
 	EXPECT_EQ(typeBase.get(), -2.147483904e+09f); // Note : floating point error
 	typeBase.set(-250.0f);
 	EXPECT_EQ(typeBase.get(), -250.0f);
 }
 
 TEST(TestBase, type_double_t) {
-	audio::double_t typeBase(16, 1);
+	audio::double_t typeBase(16, 0);
 	EXPECT_EQ(int64_t(typeBase.get()), 16LL);
-	EXPECT_EQ(typeBase.get(), 16.00000000745058); // Note : double point error
+	EXPECT_EQ(typeBase.get(), 16.0); // Note : double point error
 	typeBase.set(-250.0);
 	EXPECT_EQ(typeBase.get(), -250.0);
 }

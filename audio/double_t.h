@@ -151,7 +151,7 @@ namespace audio {
 			}
 			double_t operator++(int _unused) {
 				double_t result(m_data);
-				result.m_data += 1.0f;
+				m_data += 1.0f;
 				return result;
 			}
 			/* ****************************************************
@@ -163,7 +163,7 @@ namespace audio {
 			}
 			double_t operator--(int _unused) {
 				double_t result(m_data);
-				result.m_data -= 1.0f;
+				m_data -= 1.0f;
 				return result;
 			}
 	};

@@ -151,7 +151,7 @@ namespace audio {
 			}
 			float_t operator++(int _unused) {
 				float_t result(m_data);
-				result.m_data += 1.0f;
+				m_data += 1.0f;
 				return result;
 			}
 			/* ****************************************************
@@ -163,7 +163,7 @@ namespace audio {
 			}
 			float_t operator--(int _unused) {
 				float_t result(m_data);
-				result.m_data -= 1.0f;
+				m_data -= 1.0f;
 				return result;
 			}
 	};

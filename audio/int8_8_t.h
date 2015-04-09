@@ -123,7 +123,7 @@ namespace audio {
 			 *    *= operator
 			 *****************************************************/
 			const int8_8_t& operator*= (const int8_8_t& _obj) {
-				int16_t tmp = int16_t(m_data) * int16_t(_obj.m_data);
+				int16_t tmp = int16_t(m_data) * int16_t(_obj.m_data) + (1LL<<5);
 				m_data = int8_t(tmp >> 7);
 				return *this;
 			}

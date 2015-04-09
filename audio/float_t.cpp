@@ -57,7 +57,7 @@ audio::float_t::float_t(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 void audio::float_t::set(int64_t _value, int32_t _flotingPointPosition) {
-	m_data = float(_value << (32-_flotingPointPosition)) / float(INT32_MAX);
+	m_data = float(_value << (31-_flotingPointPosition)) / (float(INT32_MAX)+1.0f);
 }
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::float_t& _obj) {

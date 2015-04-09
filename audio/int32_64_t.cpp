@@ -69,15 +69,15 @@ audio::int32_64_t::int32_64_t(const audio::float_t& _val) {
 	m_data = int64_t(std::avg(float(INT32_MIN),
 	                          _val.get(),
 	                          float(INT32_MAX)
-	                          ) * float(INT32_MAX) * 2.0f
+	                          ) * (float(INT32_MAX) * 2.0f + 1.0f)
 	                 );
 }
 
 audio::int32_64_t::int32_64_t(const audio::double_t& _val) {
 	m_data = int64_t(std::avg(double(INT32_MIN),
 	                          _val.get(),
-	                          double(INT32_MIN)
-	                          ) * double(INT32_MAX) * 2.0
+	                          double(INT32_MAX)
+	                          ) * (double(INT32_MAX) * 2.0 + 1.0)
 	                 );
 }
 

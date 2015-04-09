@@ -139,8 +139,8 @@ namespace audio {
 			 *    /= operator
 			 *****************************************************/
 			const int8_16_t& operator/= (const int8_16_t& _obj) {
-				int16_t tmp = (int16_t(m_data) << 8) / int16_t(_obj.m_data);
-				m_data = int8_t(tmp);
+				int32_t tmp = (int32_t(m_data) << 8) / int32_t(_obj.m_data);
+				m_data = int16_t(tmp);
 				return *this;
 			}
 			/* ****************************************************
@@ -160,7 +160,7 @@ namespace audio {
 			}
 			int8_16_t operator++(int _unused) {
 				int8_16_t result(m_data);
-				result.m_data += (1<<8);
+				m_data += (1<<8);
 				return result;
 			}
 			/* ****************************************************
@@ -172,7 +172,7 @@ namespace audio {
 			}
 			int8_16_t operator--(int _unused) {
 				int8_16_t result(m_data);
-				result.m_data -= (1<<8);
+				m_data -= (1<<8);
 				return result;
 			}
 	};

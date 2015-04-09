@@ -81,7 +81,7 @@ audio::int64_64_t::int64_64_t(const audio::float_t& _val) {
 	m_data = int64_t(std::avg(-1.0f,
 	                          _val.get(),
 	                          1.0f
-	                          ) * double(INT64_MAX)
+	                          ) * (float(INT64_MAX) + 1.0f)
 	                 );
 }
 
@@ -89,7 +89,7 @@ audio::int64_64_t::int64_64_t(const audio::double_t& _val) {
 	m_data = int64_t(std::avg(-1.0,
 	                          _val.get(),
 	                          1.0
-	                          ) * double(INT64_MAX)
+	                          ) * (double(INT64_MAX) + 1.0f)
 	                 );
 }
 
@@ -98,6 +98,7 @@ audio::int64_64_t::int64_64_t(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 void audio::int64_64_t::set(int64_t _value, int32_t _flotingPointPosition) {
+	// TODO: do it better with int128_t elements
 	int64_t val = _value << (63-_flotingPointPosition);
 	m_data = std::avg(int64_t(INT64_MIN), val, int64_t(INT64_MAX));
 }

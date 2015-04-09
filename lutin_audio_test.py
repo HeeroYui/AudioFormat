@@ -11,16 +11,19 @@ def create(target):
 	myModule = module.Module(__file__, 'audio_test', 'BINARY')
 	myModule.add_src_file([
 		'test/debug.cpp',
-		'test/main.cpp',
 		'test/base.cpp',
-		'test/test_int8_8.cpp',
-		'test/test_int8_16.cpp',
+		'test/main.cpp',
+		'test/test_double.cpp',
+		'test/test_float.cpp',
 		'test/test_int16_16.cpp',
 		'test/test_int16_32.cpp',
+		'test/test_int24_24.cpp',
+		'test/test_int24_32.cpp',
 		'test/test_int32_32.cpp',
 		'test/test_int32_64.cpp',
 		'test/test_int64_64.cpp',
-		'test/test_float.cpp'
+		'test/test_int8_16.cpp',
+		'test/test_int8_8.cpp'
 		])
 	myModule.add_module_depend(['audio', 'gtest'])
 	return myModule

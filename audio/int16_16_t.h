@@ -125,7 +125,7 @@ namespace audio {
 			 *    *= operator
 			 *****************************************************/
 			const int16_16_t& operator*= (const int16_16_t& _obj) {
-				int32_t tmp = int32_t(m_data) * int32_t(_obj.m_data) + (1<<14);
+				int32_t tmp = int32_t(m_data) * int32_t(_obj.m_data);
 				m_data = int16_t(tmp >> 15);
 				return *this;
 			}

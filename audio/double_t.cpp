@@ -57,7 +57,7 @@ audio::double_t::double_t(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 void audio::double_t::set(int64_t _value, int32_t _flotingPointPosition) {
-	m_data = double(_value << (32-_flotingPointPosition)) / double(INT32_MAX);
+	m_data = double(_value << (31-_flotingPointPosition)) / (double(INT32_MAX)+1.0);
 }
 
 

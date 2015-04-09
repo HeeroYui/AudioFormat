@@ -100,7 +100,7 @@ void audio::int24_32_t::set(int64_t _value, int32_t _flotingPointPosition) {
 
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::int24_32_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << "7:24=";
+	_os << "[" << etk::to_string(_obj.get()) << ":7.24=";
 	_os << etk::to_string(double(_obj.get())/double(INT24_MAX)*0.5);
 	_os << "]";
 	return _os;

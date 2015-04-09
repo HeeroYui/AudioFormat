@@ -160,7 +160,7 @@ namespace audio {
 			}
 			int16_32_t operator++(int _unused) {
 				int16_32_t result(m_data);
-				result.m_data += (1<<16);
+				m_data += (1<<16);
 				return result;
 			}
 			/* ****************************************************
@@ -172,7 +172,7 @@ namespace audio {
 			}
 			int16_32_t operator--(int _unused) {
 				int16_32_t result(m_data);
-				result.m_data -= (1<<16);
+				m_data -= (1<<16);
 				return result;
 			}
 	};

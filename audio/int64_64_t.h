@@ -118,8 +118,26 @@ namespace audio {
 			 *    *= operator
 			 *****************************************************/
 			const int64_64_t& operator*= (const int64_64_t& _obj) {
-				int16_t tmp = (m_data >> 31) * (_obj.m_data >> 32);
-				m_data = tmp;
+				if (    m_data > INT32_MAX
+				     || m_data < INT32_MIN) {
+					if (    _obj.m_data > INT32_MAX
+					     || _obj.m_data < INT32_MIN) {
+						int64_t tmp = (m_data >> 31) * (_obj.m_data >> 31);
+						m_data = tmp >> 1;
+					} else {
+						int64_t tmp = (m_data >> 31) * (_obj.m_data);
+						m_data = tmp >> 32;
+					}
+				} else {
+					if (    _obj.m_data > INT32_MAX
+					     || _obj.m_data < INT32_MIN) {
+						int64_t tmp = (m_data) * (_obj.m_data >> 32);
+						m_data = tmp >> 31;
+					} else {
+						int64_t tmp = (m_data >> 24) * (_obj.m_data >> 24);
+						m_data = tmp >> 16;
+					}
+				}
 				return *this;
 			}
 			/* ****************************************************
@@ -134,8 +152,9 @@ namespace audio {
 			 *    /= operator
 			 *****************************************************/
 			const int64_64_t& operator/= (const int64_64_t& _obj) {
-				int64_t tmp = (m_data << 31) / (_obj.m_data>>32);
-				m_data = tmp;
+				// TODO: Does not work
+				int64_t tmp = (m_data) / (_obj.m_data);
+				m_data = tmp << 63;
 				return *this;
 			}
 			/* ****************************************************
