@@ -8,27 +8,6 @@
 #include <gtest/gtest.h>
 #include <audio/types.h>
 
-
-/*
-TEST(TestInt64_64, basicOperator) {
-	audio::int64_64_t typeBase(16);
-	audio::int64_64_t out(0x7FFFFFFFFFFFFFFFLL, 63);
-	
-	EXPECT_EQ(out.get(), 0x7FFFFFFFFFFFFFFFLL);
-	out *= 16;
-	EXPECT_EQ(out.get(), 16);
-	out = 1;
-	EXPECT_EQ(out.get(), 1);
-	out *= typeBase;
-	EXPECT_EQ(out.get(), 0);
-	out = audio::double_t(0.3);
-	out += audio::double_t(0.3);
-	EXPECT_EQ(out.get(), audio::int64_64_t(audio::double_t(0.6)).get());
-	out *= audio::double_t(0.3);
-	EXPECT_EQ(out.get(), 1660206965216520438LL);
-}
-*/
-
 TEST(TestInt64_64, basicConstructorBase) {
 	audio::int64_64_t typeBase(16);
 	EXPECT_EQ(typeBase.get(), 16);
@@ -218,7 +197,6 @@ TEST(TestInt64_64, basicConstructorInt8_16) {
 }
 TEST(TestInt64_64, basicConstructorInt16_16) {
 	audio::int64_64_t out(audio::int16_16_t(5,4));
-	APPL_INFO(audio::int64_64_t(5,4));
 	EXPECT_EQ(RESULT_VALUE, out.get());
 }
 TEST(TestInt64_64, basicConstructorInt24_24) {

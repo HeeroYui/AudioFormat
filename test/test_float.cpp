@@ -188,7 +188,7 @@ TEST(TestFloat, basicConstructorInt8_8) {
 }
 TEST(TestFloat, basicConstructorInt8_16) {
 	audio::float_t out(audio::int8_16_t(5,4));
-	EXPECT_EQ(RESULT_VALUE, out.get());
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f)+1, int32_t(out.get()*1000.0f));
 }
 TEST(TestFloat, basicConstructorInt16_16) {
 	audio::float_t out(audio::int16_16_t(5,4));
@@ -200,11 +200,11 @@ TEST(TestFloat, basicConstructorInt24_24) {
 }
 TEST(TestFloat, basicConstructorInt24_32) {
 	audio::float_t out(audio::int24_32_t(5,4));
-	EXPECT_EQ(RESULT_VALUE, out.get());
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f), int32_t(out.get()*1000.0f));
 }
 TEST(TestFloat, basicConstructorInt16_32) {
 	audio::float_t out(audio::int16_32_t(5,4));
-	EXPECT_EQ(RESULT_VALUE, out.get());
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f), int32_t(out.get()*1000.0f));
 }
 TEST(TestFloat, basicConstructorInt32_32) {
 	audio::float_t out(audio::int32_32_t(5,4));

@@ -30,7 +30,7 @@
 
 
 audio::int32_64_t::int32_64_t(const audio::int8_8_t& _val) {
-	m_data = int64_t(_val.get()) << 24;
+	m_data = int64_t(_val.get()) << 25;
 }
 
 audio::int32_64_t::int32_64_t(const audio::int8_16_t& _val) {
@@ -38,7 +38,7 @@ audio::int32_64_t::int32_64_t(const audio::int8_16_t& _val) {
 }
 
 audio::int32_64_t::int32_64_t(const audio::int16_16_t& _val) {
-	m_data = int64_t(_val.get()) << 16;
+	m_data = int64_t(_val.get()) << 17;
 }
 
 audio::int32_64_t::int32_64_t(const audio::int16_32_t& _val) {
@@ -46,7 +46,7 @@ audio::int32_64_t::int32_64_t(const audio::int16_32_t& _val) {
 }
 
 audio::int32_64_t::int32_64_t(const audio::int24_24_t& _val) {
-	m_data = int64_t(_val.get()) << 8;
+	m_data = int64_t(_val.get()) << 9;
 }
 
 audio::int32_64_t::int32_64_t(const audio::int24_32_t& _val) {
@@ -54,7 +54,7 @@ audio::int32_64_t::int32_64_t(const audio::int24_32_t& _val) {
 }
 
 audio::int32_64_t::int32_64_t(const audio::int32_32_t& _val) {
-	m_data = int64_t(_val.get());
+	m_data = int64_t(_val.get()) << 1;
 }
 
 audio::int32_64_t::int32_64_t(const audio::int32_64_t& _val) {
@@ -62,7 +62,7 @@ audio::int32_64_t::int32_64_t(const audio::int32_64_t& _val) {
 }
 
 audio::int32_64_t::int32_64_t(const audio::int64_64_t& _val) {
-	m_data = int64_t(_val.get() >> 32);
+	m_data = int64_t(_val.get() >> 31);
 }
 
 audio::int32_64_t::int32_64_t(const audio::float_t& _val) {

@@ -9,39 +9,39 @@
 
 
 audio::double_t::double_t(const audio::int8_8_t& _val) {
-	m_data = double(_val.get()) / double(INT8_MAX);
+	m_data = double(_val.get()) / (double(INT8_MAX) + 1.0);
 }
 
 audio::double_t::double_t(const audio::int8_16_t& _val) {
-	m_data = double(_val.get()) / double(INT8_MAX);
+	m_data = double(_val.get()) / (double(INT8_MAX) * 2.0 + 1.0);
 }
 
 audio::double_t::double_t(const audio::int16_16_t& _val) {
-	m_data = double(_val.get()) / double(INT16_MAX);
+	m_data = double(_val.get()) / (double(INT16_MAX) + 1.0);
 }
 
 audio::double_t::double_t(const audio::int16_32_t& _val) {
-	m_data = double(_val.get()) / double(INT16_MAX);
+	m_data = double(_val.get()) / (double(INT16_MAX) * 2.0 + 1.0);
 }
 
 audio::double_t::double_t(const audio::int24_24_t& _val) {
-	m_data = double(_val.get()) / double(INT24_MAX);
+	m_data = double(_val.get()) / (double(INT24_MAX) + 1.0);
 }
 
 audio::double_t::double_t(const audio::int24_32_t& _val) {
-	m_data = double(_val.get()) / double(INT24_MAX);
+	m_data = double(_val.get()) / (double(INT24_MAX) * 2.0 + 1.0);
 }
 
 audio::double_t::double_t(const audio::int32_32_t& _val) {
-	m_data = double(_val.get()) / double(INT32_MAX);
+	m_data = double(_val.get()) / (double(INT32_MAX) + 1.0);
 }
 
 audio::double_t::double_t(const audio::int32_64_t& _val) {
-	m_data = double(_val.get()) / double(INT32_MAX);
+	m_data = double(_val.get()) / (double(INT32_MAX) * 2.0 + 1.0);
 }
 
 audio::double_t::double_t(const audio::int64_64_t& _val) {
-	m_data = double(_val.get()) / double(INT64_MAX);
+	m_data = double(_val.get()) / (double(INT64_MAX) + 1.0);
 }
 
 audio::double_t::double_t(const audio::float_t& _val) {

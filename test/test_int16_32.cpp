@@ -194,7 +194,6 @@ TEST(TestInt16_32, basicConstructorInt8_16) {
 }
 TEST(TestInt16_32, basicConstructorInt16_16) {
 	audio::int16_32_t out(audio::int16_16_t(5,4));
-	APPL_INFO(audio::int16_32_t(5,4));
 	EXPECT_EQ(RESULT_VALUE, out.get());
 }
 TEST(TestInt16_32, basicConstructorInt24_24) {

@@ -34,9 +34,9 @@ audio::int8_8_t::int8_8_t(const audio::int8_8_t& _val) {
 }
 
 audio::int8_8_t::int8_8_t(const audio::int8_16_t& _val) {
-	m_data = int8_t(std::avg(int16_t(INT8_MIN),
-	                         _val.get(),
-	                         int16_t(INT8_MAX)
+	m_data = int8_t(std::avg(int32_t(INT8_MIN),
+	                         int32_t(_val.get())>>1,
+	                         int32_t(INT8_MAX)
 	                         ));
 }
 
@@ -46,7 +46,7 @@ audio::int8_8_t::int8_8_t(const audio::int16_16_t& _val) {
 
 audio::int8_8_t::int8_8_t(const audio::int16_32_t& _val) {
 	m_data = int8_t(std::avg(int32_t(INT16_MIN),
-	                         _val.get(),
+	                         _val.get()>>1,
 	                         int32_t(INT16_MAX)
 	                         ) >> 8
 	               );
@@ -58,7 +58,7 @@ audio::int8_8_t::int8_8_t(const audio::int24_24_t& _val) {
 
 audio::int8_8_t::int8_8_t(const audio::int24_32_t& _val) {
 	m_data = int8_t(std::avg(int32_t(INT24_MIN),
-	                         _val.get(),
+	                         _val.get() >> 1,
 	                         int32_t(INT24_MAX)
 	                         ) >> 16);
 }
@@ -69,7 +69,7 @@ audio::int8_8_t::int8_8_t(const audio::int32_32_t& _val) {
 
 audio::int8_8_t::int8_8_t(const audio::int32_64_t& _val) {
 	m_data = int8_t(std::avg(int64_t(INT32_MIN),
-	                         _val.get(),
+	                         _val.get() >> 1,
 	                         int64_t(INT32_MAX)
 	                         ) >> 24
 	                );
@@ -83,7 +83,7 @@ audio::int8_8_t::int8_8_t(const audio::float_t& _val) {
 	m_data = int16_t(std::avg(-1.0f,
 	                          _val.get(),
 	                          1.0f
-	                          ) * float(INT8_MAX)
+	                          ) * (float(INT8_MAX) + 1.0f)
 	                 );
 }
 
@@ -91,7 +91,7 @@ audio::int8_8_t::int8_8_t(const audio::double_t& _val) {
 	m_data = int16_t(std::avg(-1.0,
 	                          _val.get(),
 	                          1.0
-	                          ) * double(INT8_MAX)
+	                          ) * (double(INT8_MAX) + 1.0)
 	                 );
 }
 

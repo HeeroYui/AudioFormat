@@ -9,34 +9,34 @@
 #include <audio/types.h>
 
 
-TEST(TesDouble, basicConstructorBase) {
+TEST(TestDouble, basicConstructorBase) {
 	audio::double_t typeBase(25.0);
 	EXPECT_EQ(typeBase.get(), 25.0);
 }
 
-TEST(TesDouble, basicConstructorSetOne) {
+TEST(TestDouble, basicConstructorSetOne) {
 	audio::double_t typeBase(1, 0);
 	EXPECT_EQ(typeBase.get(), 1.0);
 }
 
-TEST(TesDouble, basicConstructorSetLessOne) {
+TEST(TestDouble, basicConstructorSetLessOne) {
 	audio::double_t typeBase(-1, 0);
 	EXPECT_EQ(typeBase.get(), -1.0);
 }
 
-TEST(TesDouble, basicOperatorEqual) {
+TEST(TestDouble, basicOperatorEqual) {
 	audio::double_t typeBase;
 	typeBase = 35.0;
 	EXPECT_EQ(typeBase.get(), 35.0);
 }
 
-TEST(TesDouble, basicOperatorPlus) {
+TEST(TestDouble, basicOperatorPlus) {
 	audio::double_t typeBase(35.0);
 	typeBase += 35.0;
 	EXPECT_EQ(typeBase.get(), 70.0);
 }
 
-TEST(TesDouble, basicOperatorMinus) {
+TEST(TestDouble, basicOperatorMinus) {
 	audio::double_t typeBase(55.0);
 	typeBase -= 35.0;
 	EXPECT_EQ(typeBase.get(), 20.0);
@@ -44,7 +44,7 @@ TEST(TesDouble, basicOperatorMinus) {
 	EXPECT_EQ(typeBase.get(), -15.0);
 }
 
-TEST(TesDouble, basicOperatorMultiplication) {
+TEST(TestDouble, basicOperatorMultiplication) {
 	audio::double_t typeBase(-1, 0);
 	typeBase *= 35.0;
 	EXPECT_EQ(typeBase.get(), -35.0);
@@ -180,6 +180,54 @@ TEST(TestDouble, basicOperatorDecrementPre) {
 	audio::double_t out(10, 0);
 	--out;
 	EXPECT_EQ(out.get(), audio::double_t(9, 0).get());
+}
+
+
+#define RESULT_VALUE (0.3125)
+
+TEST(TestDouble, basicConstructorInt8_8) {
+	audio::float_t out(audio::int8_8_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorInt8_16) {
+	audio::float_t out(audio::int8_16_t(5,4));
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f)+1, int32_t(out.get()*1000.0f));
+}
+TEST(TestDouble, basicConstructorInt16_16) {
+	audio::float_t out(audio::int16_16_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorInt24_24) {
+	audio::float_t out(audio::int24_24_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorInt24_32) {
+	audio::float_t out(audio::int24_32_t(5,4));
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f), int32_t(out.get()*1000.0f));
+}
+TEST(TestDouble, basicConstructorInt16_32) {
+	audio::float_t out(audio::int16_32_t(5,4));
+	EXPECT_EQ(int32_t(RESULT_VALUE*1000.0f), int32_t(out.get()*1000.0f));
+}
+TEST(TestDouble, basicConstructorInt32_32) {
+	audio::float_t out(audio::int32_32_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorInt32_64) {
+	audio::float_t out(audio::int32_64_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorInt64_64) {
+	audio::float_t out(audio::int64_64_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorFloat) {
+	audio::float_t out(audio::float_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
+}
+TEST(TestDouble, basicConstructorDouble) {
+	audio::float_t out(audio::double_t(5,4));
+	EXPECT_EQ(RESULT_VALUE, out.get());
 }
 
 

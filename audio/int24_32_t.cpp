@@ -30,7 +30,7 @@
 
 
 audio::int24_32_t::int24_32_t(const audio::int8_8_t& _val) {
-	m_data = int32_t(_val.get()) << 16;
+	m_data = int32_t(_val.get()) << 17;
 }
 
 audio::int24_32_t::int24_32_t(const audio::int8_16_t& _val) {
@@ -38,7 +38,7 @@ audio::int24_32_t::int24_32_t(const audio::int8_16_t& _val) {
 }
 
 audio::int24_32_t::int24_32_t(const audio::int16_16_t& _val) {
-	m_data = _val.get() << 8;
+	m_data = _val.get() << 9;
 }
 
 audio::int24_32_t::int24_32_t(const audio::int16_32_t& _val) {
@@ -50,7 +50,7 @@ audio::int24_32_t::int24_32_t(const audio::int16_32_t& _val) {
 }
 
 audio::int24_32_t::int24_32_t(const audio::int24_24_t& _val) {
-	m_data = _val.get();
+	m_data = _val.get() << 1;
 }
 
 audio::int24_32_t::int24_32_t(const audio::int24_32_t& _val) {
@@ -58,7 +58,7 @@ audio::int24_32_t::int24_32_t(const audio::int24_32_t& _val) {
 }
 
 audio::int24_32_t::int24_32_t(const audio::int32_32_t& _val) {
-	m_data = int32_t(_val.get() >> 8);
+	m_data = int32_t(_val.get() >> 7);
 }
 
 audio::int24_32_t::int24_32_t(const audio::int32_64_t& _val) {
@@ -70,14 +70,14 @@ audio::int24_32_t::int24_32_t(const audio::int32_64_t& _val) {
 }
 
 audio::int24_32_t::int24_32_t(const audio::int64_64_t& _val) {
-	m_data = int32_t(_val.get() >> 40);
+	m_data = int32_t(_val.get() >> 39);
 }
 
 audio::int24_32_t::int24_32_t(const audio::float_t& _val) {
 	m_data = int32_t(std::avg(float(INT8_MIN),
 	                          _val.get(),
 	                          float(INT8_MAX)
-	                          ) * float(INT24_MAX) * 2.0f
+	                          ) * (float(INT24_MAX) * 2.0f + 1.0f)
 	                 );
 }
 
@@ -85,7 +85,7 @@ audio::int24_32_t::int24_32_t(const audio::double_t& _val) {
 	m_data = int32_t(std::avg(-1.0,
 	                          _val.get(),
 	                          1.0
-	                          ) * double(INT24_MAX) * 2.0
+	                          ) * (double(INT24_MAX) * 2.0 + 1.0)
 	                 );
 }
 
