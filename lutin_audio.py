@@ -13,6 +13,8 @@ def create(target):
 		'audio/debug.cpp',
 		'audio/channel.cpp',
 		'audio/format.cpp',
+		'audio/Time.cpp',
+		'audio/Duration.cpp',
 		'audio/int8_8_t.cpp',
 		'audio/int8_16_t.cpp',
 		'audio/int16_16_t.cpp',
