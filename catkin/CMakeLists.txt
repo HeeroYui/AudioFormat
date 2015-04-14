@@ -44,6 +44,19 @@ add_library(${PROJECT_NAME}
   ../${PROJECT_NAME}/debug.cpp
   ../${PROJECT_NAME}/channel.cpp
   ../${PROJECT_NAME}/format.cpp
+  ../${PROJECT_NAME}/Time.cpp
+  ../${PROJECT_NAME}/Duration.cpp
+  ../${PROJECT_NAME}/int8_8_t.cpp
+  ../${PROJECT_NAME}/int8_16_t.cpp
+  ../${PROJECT_NAME}/int16_16_t.cpp
+  ../${PROJECT_NAME}/int16_32_t.cpp
+  ../${PROJECT_NAME}/int24_24_t.cpp
+  ../${PROJECT_NAME}/int24_32_t.cpp
+  ../${PROJECT_NAME}/int32_32_t.cpp
+  ../${PROJECT_NAME}/int32_64_t.cpp
+  ../${PROJECT_NAME}/int64_64_t.cpp
+  ../${PROJECT_NAME}/float_t.cpp
+  ../${PROJECT_NAME}/double_t.cpp
 )
 
 
