@@ -9,6 +9,8 @@
 
 #include <string>
 #include <vector>
+#include <etk/types.h>
+
 #ifdef ETK_EXTERN_FRAMEWORK_ROS
 	#include <ros/ros.h>
 	#include "audio_msg/AudioBuffer.h"
