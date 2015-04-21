@@ -65,13 +65,17 @@ std::vector<enum audio::format> audio::getListFormatFromString(const std::string
 
 uint32_t audio::getFormatBytes(audio::format _format) {
 	switch(_format) {
+		case audio::format_unknow:
+			return 1;
 		case audio::format_int8:
 			return sizeof(int8_t);
 		case audio::format_int8_on_int16:
 		case audio::format_int16:
 			return sizeof(int16_t);
-		case audio::format_int16_on_int32:
 		case audio::format_int24:
+			return 3;
+		case audio::format_int16_on_int32:
+		case audio::format_int24_on_int32:
 		case audio::format_int32:
 			return sizeof(int32_t);
 		case audio::format_int32_on_int64:

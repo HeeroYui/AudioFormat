@@ -39,6 +39,12 @@ namespace audio {
 			float get() const {
 				return m_data;
 			}
+			float getFloat() const {
+				return m_data;
+			}
+			double getDouble() const {
+				return m_data;
+			}
 			/* ****************************************************
 			 *    = assigment
 			 *****************************************************/

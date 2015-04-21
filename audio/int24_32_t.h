@@ -46,6 +46,12 @@ namespace audio {
 			int32_t get() const {
 				return m_data;
 			}
+			float getFloat() const {
+				return getDouble();
+			}
+			double getDouble() const {
+				return double(m_data)/double(INT24_MAX)*0.5;
+			}
 			/* ****************************************************
 			 *    = assigment
 			 *****************************************************/
