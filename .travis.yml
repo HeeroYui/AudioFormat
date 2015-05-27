@@ -1,13 +1,11 @@
 language: cpp
 
-# compilator system:
 compiler:
 - clang
 - gcc
 
 os: linux
 
-# previous actions:
 before_script: 
   - rm -rf *
   - git clone https://github.com/HeeroYui/etk.git
@@ -16,7 +14,6 @@ before_script:
   - git clone https://github.com/HeeroYui/audio.git
   - if [ "$CXX" == "clang++" ]; then BUILDER=clang; else BUILDER=gcc; fi
 
-#install Gcc to have lisstdc++ 4.8 & gcc 4.8
 install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -qq
@@ -25,10 +22,10 @@ install:
   - sudo rm /usr/bin/gcc /usr/bin/g++
   - sudo ln -s /usr/bin/gcc-4.9 /usr/bin/gcc
   - sudo ln -s /usr/bin/g++-4.9 /usr/bin/g++
+  - sudo pip install lutin
 
-# build sequence with Lutin :
 script: 
-  - ./lutin/lutin.py -C -P -c$BUILDER -mdebug -p audio_test
+  - lutin -C -P -c$BUILDER -mdebug -p audio_test
   - ./out/Linux_x86_64/debug/staging/$BUILDER/audio_test/usr/bin/audio_test
 
 #send e-mail on compilation result:
