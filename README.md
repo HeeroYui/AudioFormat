@@ -3,6 +3,8 @@ audio
 
 `audio` is simple audio basic format description
 
+[![Build Status](https://travis-ci.org/musicdsp/audio.svg?branch=master)](https://travis-ci.org/musicdsp/audio)
+
 Instructions
 ============
 
@@ -30,4 +32,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
