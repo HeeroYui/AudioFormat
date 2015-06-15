@@ -8,10 +8,9 @@ os: linux
 
 before_script: 
   - rm -rf *
-  - git clone https://github.com/HeeroYui/etk.git
-  - git clone https://github.com/HeeroYui/lutin.git
-  - git clone https://github.com/HeeroYui/gtest.git
-  - git clone https://github.com/HeeroYui/audio.git
+  - git clone https://github.com/atria-soft/etk.git
+  - git clone https://github.com/generic-library/gtest-lutin.git
+  - git clone https://github.com/musicdsp/audio.git
   - if [ "$CXX" == "clang++" ]; then BUILDER=clang; else BUILDER=gcc; fi
 
 install:
