@@ -9,7 +9,7 @@ os: linux
 before_script: 
   - rm -rf *
   - git clone https://github.com/atria-soft/etk.git
-  - git clone https://github.com/generic-library/gtest-lutin.git
+  - git clone https://github.com/generic-library/gtest-lutin.git --recursive
   - git clone https://github.com/musicdsp/audio.git
   - if [ "$CXX" == "clang++" ]; then BUILDER=clang; else BUILDER=gcc; fi
 
@@ -24,8 +24,8 @@ install:
   - sudo pip install lutin
 
 script: 
-  - lutin -C -P -c$BUILDER -mdebug -p audio_test
-  - ./out/Linux_x86_64/debug/staging/$BUILDER/audio_test/usr/bin/audio_test
+  - lutin -C -P -c$BUILDER -mdebug -p audio-test
+  - ./out/Linux_x86_64/debug/staging/$BUILDER/audio-test/usr/bin/audio-test
 
 #send e-mail on compilation result:
 notifications:

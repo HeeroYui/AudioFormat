@@ -3,11 +3,11 @@ import lutin.module as module
 import lutin.tools as tools
 
 def get_desc():
-	return "audio_test : Basic audio types test"
+	return "Basic audio types test"
 
 
 def create(target):
-	myModule = module.Module(__file__, 'audio_test', 'BINARY')
+	myModule = module.Module(__file__, 'audio-test', 'BINARY')
 	myModule.add_src_file([
 		'test/debug.cpp',
 		'test/base.cpp',
