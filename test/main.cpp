@@ -11,7 +11,7 @@
 #include <math.h>
 #include <sstream>
 #include <unistd.h>
-#include <etk/thread.h>
+#include <thread>
 #include <audio/types.h>
 
 

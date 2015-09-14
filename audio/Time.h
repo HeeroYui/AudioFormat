@@ -9,7 +9,7 @@
 
 #include <string>
 #include <etk/types.h>
-#include <etk/chrono.h>
+#include <chrono>
 
 namespace audio {
 	class Duration;

@@ -8,7 +8,7 @@
 #define __AUDIO_DURATION_H__
 
 #include <etk/types.h>
-#include <etk/chrono.h>
+#include <chrono>
 
 namespace audio {
 	class Duration {
