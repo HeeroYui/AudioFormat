@@ -7,8 +7,8 @@ def get_desc():
 
 
 def create(target):
-	myModule = module.Module(__file__, 'audio', 'LIBRARY')
-	myModule.add_src_file([
+	my_module = module.Module(__file__, 'audio', 'LIBRARY')
+	my_module.add_src_file([
 		'audio/debug.cpp',
 		'audio/channel.cpp',
 		'audio/format.cpp',
@@ -26,7 +26,7 @@ def create(target):
 		'audio/float_t.cpp',
 		'audio/double_t.cpp'
 		])
-	myModule.add_header_file([
+	my_module.add_header_file([
 		'audio/types.h',
 		'audio/debug.h',
 		'audio/debugRemove.h',
@@ -46,7 +46,7 @@ def create(target):
 		'audio/float_t.h',
 		'audio/double_t.h'
 		])
-	myModule.add_module_depend(['etk'])
-	myModule.add_path(tools.get_current_path(__file__))
-	return myModule
+	my_module.add_module_depend(['etk'])
+	my_module.add_path(tools.get_current_path(__file__))
+	return my_module
 
