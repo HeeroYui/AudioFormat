@@ -2,14 +2,31 @@
 import lutin.module as module
 import lutin.tools as tools
 
+
+def get_type():
+	return "BINARY"
+
+def get_sub_type():
+	return "TEST"
+
 def get_desc():
 	return "Basic audio types test"
 
+def get_licence():
+	return "APACHE-2"
 
-def create(target):
-	my_module = module.Module(__file__, 'audio-test', 'BINARY')
+def get_compagny_type():
+	return "com"
+
+def get_compagny_name():
+	return "atria-soft"
+
+def get_maintainer():
+	return ["Mr DUPIN Edouard <yui.heero@gmail.com>"]
+
+def create(target, module_name):
+	my_module = module.Module(__file__, module_name, get_type())
 	my_module.add_src_file([
-		'test/debug.cpp',
 		'test/base.cpp',
 		'test/main.cpp',
 		'test/test_double.cpp',
@@ -24,7 +41,7 @@ def create(target):
 		'test/test_int8_16.cpp',
 		'test/test_int8_8.cpp'
 		])
-	my_module.add_module_depend(['audio', 'gtest'])
+	my_module.add_module_depend(['audio', 'gtest', 'test-debug'])
 	return my_module
 
 

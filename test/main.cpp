@@ -4,7 +4,7 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include "debug.h"
+#include <test-debug/debug.h>
 #include <gtest/gtest.h>
 #include <etk/etk.h>
 #include <etk/os/FSNode.h>
@@ -27,8 +27,8 @@ int main(int _argc, const char** _argv) {
 		std::string data = _argv[iii];
 		if (    data == "-h"
 		     || data == "--help") {
-			APPL_INFO("Help : ");
-			APPL_INFO("    ./xxx ---");
+			TEST_INFO("Help : ");
+			TEST_INFO("    ./xxx ---");
 			exit(0);
 		}
 	}

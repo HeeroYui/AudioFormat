@@ -2,12 +2,29 @@
 import lutin.module as module
 import lutin.tools as tools
 
+def get_type():
+	return "LIBRARY"
+
 def get_desc():
-	return "audio : Basic audio types"
+	return "Basic audio types"
 
+def get_licence():
+	return "APACHE-2"
 
-def create(target):
-	my_module = module.Module(__file__, 'audio', 'LIBRARY')
+def get_compagny_type():
+	return "com"
+
+def get_compagny_name():
+	return "atria-soft"
+
+def get_maintainer():
+	return ["Mr DUPIN Edouard <yui.heero@gmail.com>"]
+
+def get_version():
+	return [0,1]
+
+def create(target, module_name):
+	my_module = module.Module(__file__, module_name, get_type())
 	my_module.add_src_file([
 		'audio/debug.cpp',
 		'audio/channel.cpp',
