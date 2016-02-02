@@ -73,6 +73,119 @@ void audio::int16_32_t::set(int64_t _value, int32_t _flotingPointPosition) {
 	m_data = std::avg(int64_t(INT32_MIN), val, int64_t(INT32_MAX));
 }
 
+void audio::int16_32_t::set(int32_t _value) {
+	m_data = _value;
+}
+
+int32_t audio::int16_32_t::get() const {
+	return m_data;
+}
+
+float audio::int16_32_t::getFloat() const {
+	return getDouble();
+}
+
+double audio::int16_32_t::getDouble() const {
+	return double(m_data)/double(INT16_MAX)*0.5;
+}
+
+const audio::int16_32_t& audio::int16_32_t::operator= (const audio::int16_32_t& _obj ) {
+	m_data = _obj.m_data;
+	return *this;
+}
+
+bool audio::int16_32_t::operator== (const audio::int16_32_t& _obj) const {
+	return _obj.m_data == m_data;
+}
+
+bool audio::int16_32_t::operator!= (const audio::int16_32_t& _obj) const {
+	return _obj.m_data != m_data;
+}
+
+bool audio::int16_32_t::operator< (const audio::int16_32_t& _obj) const {
+	return m_data < _obj.m_data;
+}
+
+bool audio::int16_32_t::operator<= (const audio::int16_32_t& _obj) const {
+	return m_data <= _obj.m_data;
+}
+
+bool audio::int16_32_t::operator> (const audio::int16_32_t& _obj) const {
+	return m_data > _obj.m_data;
+}
+
+bool audio::int16_32_t::operator>= (const audio::int16_32_t& _obj) const {
+	return m_data >= _obj.m_data;
+}
+
+const audio::int16_32_t& audio::int16_32_t::operator+= (const audio::int16_32_t& _obj) {
+	m_data += _obj.m_data;
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator+ (const audio::int16_32_t& _obj) const {
+	audio::int16_32_t tmpp(m_data);
+	tmpp.m_data += _obj.m_data;
+	return tmpp;
+}
+
+const audio::int16_32_t& audio::int16_32_t::operator-= (const audio::int16_32_t& _obj) {
+	m_data -= _obj.m_data;
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator- (const audio::int16_32_t& _obj) const {
+	audio::int16_32_t tmpp(m_data);
+	tmpp.m_data -= _obj.m_data;
+	return tmpp;
+}
+
+const audio::int16_32_t& audio::int16_32_t::operator*= (const audio::int16_32_t& _obj) {
+	int64_t tmp = int64_t(m_data) * int64_t(_obj.m_data) + (1<<15);
+	m_data = int32_t(tmp >> 16);
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator* (const audio::int16_32_t& _obj) const {
+	audio::int16_32_t tmpp(m_data);
+	tmpp *= _obj;
+	return tmpp;
+}
+
+const audio::int16_32_t& audio::int16_32_t::operator/= (const audio::int16_32_t& _obj) {
+	int64_t tmp = (int64_t(m_data) << 16) / int64_t(_obj.m_data);
+	m_data = int32_t(tmp);
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator/ (const audio::int16_32_t& _obj) const{
+	audio::int16_32_t tmpp(m_data);
+	tmpp /= _obj;
+	return tmpp;
+}
+
+audio::int16_32_t& audio::int16_32_t::operator++() {
+	m_data += (1<<16);
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator++(int _unused) {
+	audio::int16_32_t result(m_data);
+	m_data += (1<<16);
+	return result;
+}
+
+audio::int16_32_t& audio::int16_32_t::operator--() {
+	m_data -= (1<<16);
+	return *this;
+}
+
+audio::int16_32_t audio::int16_32_t::operator--(int _unused) {
+	audio::int16_32_t result(m_data);
+	m_data -= (1<<16);
+	return result;
+}
+
 std::ostream& audio::operator <<(std::ostream& _os, const audio::int16_32_t& _obj) {
 	_os << "[" << etk::to_string(_obj.get()) << ":7.16=";
 	_os << etk::to_string(double(_obj.get())/double(INT16_MAX)*0.5);

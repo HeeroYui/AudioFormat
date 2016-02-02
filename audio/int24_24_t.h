@@ -3,11 +3,8 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
+#pragma once
 #include <audio/types.h>
-
-#ifndef __AUDIO_TYPE_INT24_24_T_H__
-#define __AUDIO_TYPE_INT24_24_T_H__
 
 namespace audio {
 	/**
@@ -45,6 +42,4 @@ namespace audio {
 	};
 	std::ostream& operator <<(std::ostream& _os, const audio::int24_24_t& _obj);
 }
-
-#endif
 

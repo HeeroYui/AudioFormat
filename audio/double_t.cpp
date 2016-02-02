@@ -61,6 +61,117 @@ void audio::double_t::set(int64_t _value, int32_t _flotingPointPosition) {
 }
 
 
+void audio::double_t::set(double _value) {
+	m_data = _value;
+}
+
+double audio::double_t::get() const {
+	return m_data;
+}
+
+float audio::double_t::getFloat() const {
+	return m_data;
+}
+
+double audio::double_t::getDouble() const {
+	return m_data;
+}
+
+const audio::double_t& audio::double_t::operator= (const audio::double_t& _obj ) {
+	m_data = _obj.m_data;
+	return *this;
+}
+
+bool audio::double_t::operator== (const audio::double_t& _obj) const {
+	return _obj.m_data == m_data;
+}
+
+bool audio::double_t::operator!= (const audio::double_t& _obj) const {
+	return _obj.m_data != m_data;
+}
+
+bool audio::double_t::operator< (const audio::double_t& _obj) const {
+	return m_data < _obj.m_data;
+}
+
+bool audio::double_t::operator<= (const audio::double_t& _obj) const {
+	return m_data <= _obj.m_data;
+}
+
+bool audio::double_t::operator> (const audio::double_t& _obj) const {
+	return m_data > _obj.m_data;
+}
+
+bool audio::double_t::operator>= (const audio::double_t& _obj) const {
+	return m_data >= _obj.m_data;
+}
+
+const audio::double_t& audio::double_t::operator+= (const audio::double_t& _obj) {
+	m_data += _obj.m_data;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator+ (const audio::double_t& _obj) const {
+	audio::double_t tmpp(m_data);
+	tmpp.m_data += _obj.m_data;
+	return tmpp;
+}
+
+const audio::double_t& audio::double_t::operator-= (const audio::double_t& _obj) {
+	m_data -= _obj.m_data;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator- (const audio::double_t& _obj) const {
+	audio::double_t tmpp(m_data);
+	tmpp.m_data -= _obj.m_data;
+	return tmpp;
+}
+
+const audio::double_t& audio::double_t::operator*= (const audio::double_t& _obj) {
+	m_data *= _obj.m_data;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator* (const audio::double_t& _obj) const {
+	audio::double_t tmpp(m_data);
+	tmpp.m_data *= _obj.m_data;
+	return tmpp;
+}
+
+const audio::double_t& audio::double_t::operator/= (const audio::double_t& _obj) {
+	m_data /= _obj.m_data;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator/ (const audio::double_t& _obj) const{
+	audio::double_t tmpp(m_data);
+	tmpp.m_data /= _obj.m_data;
+	return tmpp;
+}
+
+audio::double_t& audio::double_t::operator++() {
+	m_data += 1.0f;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator++(int _unused) {
+	audio::double_t result(m_data);
+	m_data += 1.0f;
+	return result;
+}
+
+audio::double_t& audio::double_t::operator--() {
+	m_data -= 1.0f;
+	return *this;
+}
+
+audio::double_t audio::double_t::operator--(int _unused) {
+	audio::double_t result(m_data);
+	m_data -= 1.0f;
+	return result;
+}
+
 std::ostream& audio::operator <<(std::ostream& _os, const audio::double_t& _obj) {
 	_os << "[" << etk::to_string(_obj.get()) << ":d]";
 	return _os;

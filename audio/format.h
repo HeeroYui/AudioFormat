@@ -3,9 +3,7 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
-#ifndef __AUDIO_FORMAT_H__
-#define __AUDIO_FORMAT_H__
+#pragma once
 
 #include <string>
 
@@ -60,7 +58,4 @@ namespace audio {
 	uint8_t convertFormat(enum audio::format _obj);
 	enum audio::format convertFormat(uint8_t _obj);
 };
-
-
-#endif
 

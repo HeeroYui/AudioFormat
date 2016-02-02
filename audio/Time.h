@@ -3,9 +3,7 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
-#ifndef __AUDIO_TIME_H__
-#define __AUDIO_TIME_H__
+#pragma once
 
 #include <string>
 #include <etk/types.h>
@@ -41,6 +39,4 @@ namespace audio {
 	};
 	std::ostream& operator <<(std::ostream& _os, const audio::Time& _obj);
 }
-
-#endif
 

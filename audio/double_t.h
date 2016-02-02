@@ -3,11 +3,8 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
+#pragma once
 #include <audio/types.h>
-
-#ifndef __AUDIO_TYPE_DOUBLE_T_H__
-#define __AUDIO_TYPE_DOUBLE_T_H__
 
 namespace audio {
 	class double_t {
@@ -15,8 +12,9 @@ namespace audio {
 			double m_data;
 		public:
 			double_t() {}
-			double_t(double _value) {
-				m_data = _value;
+			double_t(double _value) :
+			  m_data(_value) {
+				// nothing to do
 			}
 			// transformation operator:
 			double_t(const audio::int8_8_t& _val);
@@ -33,148 +31,80 @@ namespace audio {
 			// set operator
 			double_t(int64_t _value, int32_t _flotingPointPosition);
 			void set(int64_t _value, int32_t _flotingPointPosition);
-			void set(double _value) {
-				m_data = _value;
-			}
-			double get() const {
-				return m_data;
-			}
-			float getFloat() const {
-				return m_data;
-			}
-			double getDouble() const {
-				return m_data;
-			}
+			void set(double _value);
+			double get() const;
+			float getFloat() const;
+			double getDouble() const;
 			/* ****************************************************
 			 *    = assigment
 			 *****************************************************/
-			const double_t& operator= (const double_t& _obj ) {
-				m_data = _obj.m_data;
-				return *this;
-			}
+			const double_t& operator= (const double_t& _obj);
 			/* ****************************************************
 			 *    == operator
 			 *****************************************************/
-			bool  operator== (const double_t& _obj) const {
-				return _obj.m_data == m_data;
-			}
+			bool operator== (const double_t& _obj) const;
 			/* ****************************************************
 			 *    != operator
 			 *****************************************************/
-			bool  operator!= (const double_t& _obj) const {
-				return _obj.m_data != m_data;
-			}
+			bool operator!= (const double_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator< (const audio::double_t& _obj) const {
-				return m_data < _obj.m_data;
-			}
+			bool operator< (const audio::double_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator<= (const audio::double_t& _obj) const {
-				return m_data <= _obj.m_data;
-			}
+			bool operator<= (const audio::double_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator> (const audio::double_t& _obj) const {
-				return m_data > _obj.m_data;
-			}
+			bool operator> (const audio::double_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator>= (const audio::double_t& _obj) const {
-				return m_data >= _obj.m_data;
-			}
+			bool operator>= (const audio::double_t& _obj) const;
 			/* ****************************************************
 			 *    += operator
 			 *****************************************************/
-			const double_t& operator+= (const double_t& _obj) {
-				m_data += _obj.m_data;
-				return *this;
-			}
+			const double_t& operator+= (const double_t& _obj);
 			/* ****************************************************
 			 *    + operator
 			 *****************************************************/
-			double_t operator+ (const double_t& _obj) const {
-				double_t tmpp(m_data);
-				tmpp.m_data += _obj.m_data;
-				return tmpp;
-			}
+			double_t operator+ (const double_t& _obj) const;
 			/* ****************************************************
 			 *    -= operator
 			 *****************************************************/
-			const double_t& operator-= (const double_t& _obj) {
-				m_data -= _obj.m_data;
-				return *this;
-			}
+			const double_t& operator-= (const double_t& _obj);
 			/* ****************************************************
 			 *    - operator
 			 *****************************************************/
-			double_t operator- (const double_t& _obj) const {
-				double_t tmpp(m_data);
-				tmpp.m_data -= _obj.m_data;
-				return tmpp;
-			}
+			double_t operator- (const double_t& _obj) const;
 			/* ****************************************************
 			 *    *= operator
 			 *****************************************************/
-			const double_t& operator*= (const double_t& _obj) {
-				m_data *= _obj.m_data;
-				return *this;
-			}
+			const double_t& operator*= (const double_t& _obj);
 			/* ****************************************************
 			 *    * operator
 			 *****************************************************/
-			double_t operator* (const double_t& _obj) const {
-				double_t tmpp(m_data);
-				tmpp.m_data *= _obj.m_data;
-				return tmpp;
-			}
+			double_t operator* (const double_t& _obj) const;
 			/* ****************************************************
 			 *    /= operator
 			 *****************************************************/
-			const double_t& operator/= (const double_t& _obj) {
-				m_data /= _obj.m_data;
-				return *this;
-			}
+			const double_t& operator/= (const double_t& _obj);
 			/* ****************************************************
 			 *    / operator
 			 *****************************************************/
-			double_t operator/ (const double_t& _obj) const{
-				double_t tmpp(m_data);
-				tmpp.m_data /= _obj.m_data;
-				return tmpp;
-			}
+			double_t operator/ (const double_t& _obj) const;
 			/* ****************************************************
 			 *    ++ operator
 			 *****************************************************/
-			double_t& operator++() {
-				m_data += 1.0f;
-				return *this;
-			}
-			double_t operator++(int _unused) {
-				double_t result(m_data);
-				m_data += 1.0f;
-				return result;
-			}
+			double_t& operator++();
+			double_t operator++(int _unused);
 			/* ****************************************************
 			 *    -- operator
 			 *****************************************************/
-			double_t& operator--() {
-				m_data -= 1.0f;
-				return *this;
-			}
-			double_t operator--(int _unused) {
-				double_t result(m_data);
-				m_data -= 1.0f;
-				return result;
-			}
+			double_t& operator--();
+			double_t operator--(int _unused);
 	};
 	std::ostream& operator <<(std::ostream& _os, const audio::double_t& _obj);
 }
-
-#endif
-

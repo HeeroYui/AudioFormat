@@ -3,13 +3,8 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
+#pragma once
 #include <audio/types.h>
-
-#ifndef __AUDIO_TYPE_INT32_32_T_H__
-#define __AUDIO_TYPE_INT32_32_T_H__
-
-#include <audio/debug.h>
 
 namespace audio {
 	/**
@@ -22,8 +17,9 @@ namespace audio {
 			int32_t m_data;
 		public:
 			int32_32_t() {}
-			int32_32_t(int32_t _value) {
-				m_data = _value;
+			int32_32_t(int32_t _value) :
+			  m_data(_value) {
+				// nothing to do
 			}
 			// transformation operator:
 			int32_32_t(const audio::int8_8_t& _val);
@@ -40,152 +36,81 @@ namespace audio {
 			// set operator
 			int32_32_t(int64_t _value, int32_t _flotingPointPosition);
 			void set(int64_t _value, int32_t _flotingPointPosition);
-			void set(int32_t _value) {
-				m_data = _value;
-			}
-			int32_t get() const {
-				return m_data;
-			}
-			float getFloat() const {
-				return getDouble();
-			}
-			double getDouble() const {
-				return double(m_data)/double(INT16_MAX);
-			}
+			void set(int32_t _value);
+			int32_t get() const;
+			float getFloat() const;
+			double getDouble() const;
 			/* ****************************************************
 			 *    = assigment
 			 *****************************************************/
-			const int32_32_t& operator= (const int32_32_t& _obj ) {
-				m_data = _obj.m_data;
-				return *this;
-			}
+			const int32_32_t& operator= (const int32_32_t& _obj);
 			/* ****************************************************
 			 *    == operator
 			 *****************************************************/
-			bool  operator== (const int32_32_t& _obj) const {
-				return _obj.m_data == m_data;
-			}
+			bool operator== (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    != operator
 			 *****************************************************/
-			bool  operator!= (const int32_32_t& _obj) const {
-				return _obj.m_data != m_data;
-			}
+			bool operator!= (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator< (const audio::int32_32_t& _obj) const {
-				return m_data < _obj.m_data;
-			}
+			bool operator< (const audio::int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator<= (const audio::int32_32_t& _obj) const {
-				return m_data <= _obj.m_data;
-			}
+			bool operator<= (const audio::int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator> (const audio::int32_32_t& _obj) const {
-				return m_data > _obj.m_data;
-			}
+			bool operator> (const audio::int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    < operator
 			 *****************************************************/
-			bool operator>= (const audio::int32_32_t& _obj) const {
-				return m_data >= _obj.m_data;
-			}
+			bool operator>= (const audio::int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    += operator
 			 *****************************************************/
-			const int32_32_t& operator+= (const int32_32_t& _obj) {
-				m_data += _obj.m_data;
-				return *this;
-			}
+			const int32_32_t& operator+= (const int32_32_t& _obj);
 			/* ****************************************************
 			 *    + operator
 			 *****************************************************/
-			int32_32_t operator+ (const int32_32_t& _obj) const {
-				int32_32_t tmpp(m_data);
-				tmpp.m_data += _obj.m_data;
-				return tmpp;
-			}
+			int32_32_t operator+ (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    -= operator
 			 *****************************************************/
-			const int32_32_t& operator-= (const int32_32_t& _obj) {
-				m_data -= _obj.m_data;
-				return *this;
-			}
+			const int32_32_t& operator-= (const int32_32_t& _obj);
 			/* ****************************************************
 			 *    - operator
 			 *****************************************************/
-			int32_32_t operator- (const int32_32_t& _obj) const {
-				int32_32_t tmpp(m_data);
-				tmpp.m_data -= _obj.m_data;
-				return tmpp;
-			}
+			int32_32_t operator- (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    *= operator
 			 *****************************************************/
-			const int32_32_t& operator*= (const int32_32_t& _obj) {
-				int64_t tmp = int64_t(m_data) * int64_t(_obj.m_data);
-				m_data = int32_t(tmp >> 31);
-				return *this;
-			}
+			const int32_32_t& operator*= (const int32_32_t& _obj);
 			/* ****************************************************
 			 *    * operator
 			 *****************************************************/
-			int32_32_t operator* (const int32_32_t& _obj) const {
-				int32_32_t tmpp(m_data);
-				tmpp *= _obj;
-				return tmpp;
-			}
+			int32_32_t operator* (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    /= operator
 			 *****************************************************/
-			const int32_32_t& operator/= (const int32_32_t& _obj) {
-				int64_t tmp = (int64_t(m_data) << 31) / int64_t(_obj.m_data);
-				m_data = int32_t(tmp);
-				return *this;
-			}
+			const int32_32_t& operator/= (const int32_32_t& _obj);
 			/* ****************************************************
 			 *    / operator
 			 *****************************************************/
-			int32_32_t operator/ (const int32_32_t& _obj) const{
-				int32_32_t tmpp(m_data);
-				tmpp /= _obj;
-				return tmpp;
-			}
+			int32_32_t operator/ (const int32_32_t& _obj) const;
 			/* ****************************************************
 			 *    ++ operator
 			 *****************************************************/
-			int32_32_t& operator++() {
-				AUDIO_CRITICAL("INCREMENT ++  a type that can not be > 0");
-				return *this;
-			}
-			int32_32_t operator++(int _unused) {
-				AUDIO_CRITICAL("INCREMENT ++  a type that can not be > 0");
-				int32_32_t result(m_data);
-				return result;
-			}
+			int32_32_t& operator++();
+			int32_32_t operator++(int _unused);
 			/* ****************************************************
 			 *    -- operator
 			 *****************************************************/
-			int32_32_t& operator--() {
-				AUDIO_CRITICAL("DECREMENT --  a type that can not be > 0");
-				return *this;
-			}
-			int32_32_t operator--(int _unused) {
-				AUDIO_CRITICAL("DECREMENT --  a type that can not be > 0");
-				int32_32_t result(m_data);
-				return result;
-			}
+			int32_32_t& operator--();
+			int32_32_t operator--(int _unused);
 	};
 	std::ostream& operator <<(std::ostream& _os, const audio::int32_32_t& _obj);
 }
-
-#include <audio/debugRemove.h>
-
-#endif
 

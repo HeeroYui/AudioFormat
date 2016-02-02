@@ -3,9 +3,9 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
+#pragma once
 
-#ifndef __AUDIO_TYPES_H__
-#define __AUDIO_TYPES_H__
+#include <etk/types.h>
 
 namespace audio {
 	class int8_8_t;
@@ -41,6 +41,3 @@ namespace audio {
 #include <audio/int64_64_t.h>
 #include <audio/float_t.h>
 #include <audio/double_t.h>
-
-#endif
-

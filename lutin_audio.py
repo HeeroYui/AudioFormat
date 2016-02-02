@@ -21,7 +21,7 @@ def get_maintainer():
 	return ["Mr DUPIN Edouard <yui.heero@gmail.com>"]
 
 def get_version():
-	return [0,1]
+	return [0,2]
 
 def create(target, module_name):
 	my_module = module.Module(__file__, module_name, get_type())
@@ -45,8 +45,6 @@ def create(target, module_name):
 		])
 	my_module.add_header_file([
 		'audio/types.h',
-		'audio/debug.h',
-		'audio/debugRemove.h',
 		'audio/channel.h',
 		'audio/format.h',
 		'audio/Time.h',

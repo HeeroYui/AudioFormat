@@ -3,9 +3,7 @@
  * @copyright 2011, Edouard DUPIN, all right reserved
  * @license APACHE v2.0 (see license file)
  */
-
-#ifndef __AUDIO_CHANNEL_H__
-#define __AUDIO_CHANNEL_H__
+#pragma once
 
 #include <string>
 #include <vector>
@@ -141,5 +139,3 @@ namespace audio {
 	std::vector<enum audio::channel> convertChannel(const std::vector<uint8_t>& _obj);
 };
 
-
-#endif
