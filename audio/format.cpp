@@ -6,6 +6,7 @@
 
 #include <audio/debug.h>
 #include <audio/format.h>
+#include <etk/stdTools.h>
 
 static const char* listValues[] = {
 	"unknow",

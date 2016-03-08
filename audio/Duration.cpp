@@ -10,37 +10,37 @@
 #include <audio/debug.h>
 
 audio::Duration::Duration(int _val) {
-	m_data = std11::chrono::nanoseconds(_val);
+	m_data = std::chrono::nanoseconds(_val);
 }
 
 audio::Duration::Duration(int64_t _valSec, int64_t _valNano) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(std11::chrono::seconds(_valSec));
-	m_data += std11::chrono::nanoseconds(_valNano);
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::seconds(_valSec));
+	m_data += std::chrono::nanoseconds(_valNano);
 }
 
 audio::Duration::Duration(int64_t _val) {
-	m_data = std11::chrono::nanoseconds(_val);
+	m_data = std::chrono::nanoseconds(_val);
 }
 
 audio::Duration::Duration(double _val) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(std11::chrono::seconds(int64_t(_val)));
-	m_data += std11::chrono::nanoseconds(int64_t(((_val - int64_t(_val)) * 1000000000.0)));
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::seconds(int64_t(_val)));
+	m_data += std::chrono::nanoseconds(int64_t(((_val - int64_t(_val)) * 1000000000.0)));
 }
 
-audio::Duration::Duration(std11::chrono::nanoseconds _val) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_val);
+audio::Duration::Duration(std::chrono::nanoseconds _val) {
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(_val);
 }
 
-audio::Duration::Duration(std11::chrono::microseconds _val) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_val);
+audio::Duration::Duration(std::chrono::microseconds _val) {
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(_val);
 }
 
-audio::Duration::Duration(std11::chrono::milliseconds _val) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_val);
+audio::Duration::Duration(std::chrono::milliseconds _val) {
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(_val);
 }
 
-audio::Duration::Duration(std11::chrono::seconds _val) {
-	m_data = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_val);
+audio::Duration::Duration(std::chrono::seconds _val) {
+	m_data = std::chrono::duration_cast<std::chrono::nanoseconds>(_val);
 }
 
 int64_t audio::Duration::count() const {
@@ -89,20 +89,20 @@ audio::Duration audio::Duration::operator- (const audio::Duration& _obj) const {
 }
 
 audio::Duration& audio::Duration::operator++() {
-	m_data += std11::chrono::nanoseconds(1);
+	m_data += std::chrono::nanoseconds(1);
 	return *this;
 }
 audio::Duration audio::Duration::operator++(int _unused) {
 	audio::Duration result(m_data);
-	m_data += std11::chrono::nanoseconds(1);
+	m_data += std::chrono::nanoseconds(1);
 	return result;
 }
 audio::Duration& audio::Duration::operator--() {
-	m_data -= std11::chrono::nanoseconds(1);
+	m_data -= std::chrono::nanoseconds(1);
 	return *this;
 }
 audio::Duration audio::Duration::operator--(int _unused) {
-	m_data -= std11::chrono::nanoseconds(1);
+	m_data -= std::chrono::nanoseconds(1);
 	audio::Duration result(m_data);
 	return result;
 }

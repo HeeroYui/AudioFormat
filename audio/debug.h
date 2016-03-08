@@ -5,13 +5,13 @@
  */
 #pragma once
 
-#include <etk/log.h>
+#include <elog/log.h>
 
 namespace audio {
 	int32_t getLogId();
 };
 // TODO : Review this problem of multiple intanciation of "std::stringbuf sb"
-#define AUDIO_BASE(info,data) TK_LOG_BASE(audio::getLogId(),info,data)
+#define AUDIO_BASE(info,data) ELOG_BASE(audio::getLogId(),info,data)
 
 #define AUDIO_CRITICAL(data)      AUDIO_BASE(1, data)
 #define AUDIO_ERROR(data)         AUDIO_BASE(2, data)

@@ -13,14 +13,14 @@ namespace audio {
 	class Duration;
 	class Time {
 		private:
-			std11::chrono::steady_clock::time_point m_data;
+			std::chrono::steady_clock::time_point m_data;
 		public:
 			Time() {};
 			//Time(const audio::Duration& _val) {}; //value in second
 			Time(int64_t _valSec, int64_t _valNano);
-			Time(const std11::chrono::steady_clock::time_point& _val);
+			Time(const std::chrono::steady_clock::time_point& _val);
 			~Time() {};
-			const std11::chrono::steady_clock::time_point& get() const {
+			const std::chrono::steady_clock::time_point& get() const {
 				return m_data;
 			}
 			static Time now();

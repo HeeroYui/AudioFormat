@@ -10,15 +10,15 @@
 #include <audio/debug.h>
 
 audio::Time::Time(int64_t _valSec, int64_t _valNano) {
-	m_data = std11::chrono::steady_clock::time_point(std11::chrono::seconds(_valSec));
-	m_data += std11::chrono::nanoseconds(_valNano);
+	m_data = std::chrono::steady_clock::time_point(std::chrono::seconds(_valSec));
+	m_data += std::chrono::nanoseconds(_valNano);
 }
-audio::Time::Time(const std11::chrono::steady_clock::time_point& _val) {
+audio::Time::Time(const std::chrono::steady_clock::time_point& _val) {
 	m_data = _val;
 }
 
 audio::Time audio::Time::now() {
-	return audio::Time(std11::chrono::steady_clock::now());
+	return audio::Time(std::chrono::steady_clock::now());
 }
 
 const audio::Time& audio::Time::operator= (const audio::Time& _obj) {
@@ -52,7 +52,7 @@ bool audio::Time::operator>= (const audio::Time& _obj) const {
 
 const audio::Time& audio::Time::operator+= (const audio::Duration& _obj) {
 	#if defined(__TARGET_OS__MacOs) || defined(__TARGET_OS__IOs)
-		std11::chrono::microseconds ms = std11::chrono::duration_cast<std11::chrono::microseconds>(_obj.get());
+		std::chrono::microseconds ms = std::chrono::duration_cast<std::chrono::microseconds>(_obj.get());
 		m_data += ms;
 	#else
 		m_data += _obj.get();
@@ -68,7 +68,7 @@ audio::Time audio::Time::operator+ (const audio::Duration& _obj) const {
 
 const audio::Time& audio::Time::operator-= (const audio::Duration& _obj) {
 	#if defined(__TARGET_OS__MacOs) || defined(__TARGET_OS__IOs)
-		std11::chrono::microseconds ms = std11::chrono::duration_cast<std11::chrono::microseconds>(_obj.get());
+		std::chrono::microseconds ms = std::chrono::duration_cast<std::chrono::microseconds>(_obj.get());
 		m_data -= ms;
 	#else
 		m_data -= _obj.get();
@@ -83,15 +83,15 @@ audio::Time audio::Time::operator- (const audio::Duration& _obj) const {
 }
 
 audio::Duration audio::Time::operator- (const audio::Time& _obj) const {
-	std11::chrono::nanoseconds ns = std11::chrono::duration_cast<std11::chrono::nanoseconds>(m_data.time_since_epoch());
-	std11::chrono::nanoseconds ns2 = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_obj.m_data.time_since_epoch());
+	std::chrono::nanoseconds ns = std::chrono::duration_cast<std::chrono::nanoseconds>(m_data.time_since_epoch());
+	std::chrono::nanoseconds ns2 = std::chrono::duration_cast<std::chrono::nanoseconds>(_obj.m_data.time_since_epoch());
 	audio::Duration duration(ns);
 	audio::Duration duration2(ns2);
 	return duration - duration2;
 }
 
 std::ostream& audio::operator <<(std::ostream& _os, const audio::Time& _obj) {
-	std11::chrono::nanoseconds ns = std11::chrono::duration_cast<std11::chrono::nanoseconds>(_obj.get().time_since_epoch());
+	std::chrono::nanoseconds ns = std::chrono::duration_cast<std::chrono::nanoseconds>(_obj.get().time_since_epoch());
 	int64_t totalSecond = ns.count()/1000000000;
 	int64_t millisecond = (ns.count()%1000000000)/1000000;
 	int64_t microsecond = (ns.count()%1000000)/1000;

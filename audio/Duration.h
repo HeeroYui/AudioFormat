@@ -11,20 +11,20 @@
 namespace audio {
 	class Duration {
 		private:
-			std11::chrono::nanoseconds m_data;
+			std::chrono::nanoseconds m_data;
 		public:
 			Duration() { };
 			Duration(int _val); //value in nanosecond
 			Duration(int64_t _val); //value in nanosecond
 			Duration(int64_t _valSec, int64_t _valNano); //value in second and nanosecond
 			Duration(double _val); //value in second
-			Duration(std11::chrono::nanoseconds _val);
-			Duration(std11::chrono::microseconds _val);
-			Duration(std11::chrono::milliseconds _val);
-			Duration(std11::chrono::seconds _val);
+			Duration(std::chrono::nanoseconds _val);
+			Duration(std::chrono::microseconds _val);
+			Duration(std::chrono::milliseconds _val);
+			Duration(std::chrono::seconds _val);
 			~Duration() { };
 			int64_t count() const;
-			const std11::chrono::nanoseconds& get() const {
+			const std::chrono::nanoseconds& get() const {
 				return m_data;
 			}
 			const Duration& operator= (const Duration& _obj);
