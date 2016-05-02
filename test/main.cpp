@@ -15,8 +15,6 @@
 #include <audio/types.h>
 
 
-#undef __class__
-#define __class__ "test"
 
 int main(int _argc, const char** _argv) {
 	// init Google test :
