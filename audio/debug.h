@@ -13,6 +13,7 @@ namespace audio {
 // TODO : Review this problem of multiple intanciation of "std::stringbuf sb"
 #define AUDIO_BASE(info,data) ELOG_BASE(audio::getLogId(),info,data)
 
+#define AUDIO_PRINT(data)         AUDIO_BASE(-1, data)
 #define AUDIO_CRITICAL(data)      AUDIO_BASE(1, data)
 #define AUDIO_ERROR(data)         AUDIO_BASE(2, data)
 #define AUDIO_WARNING(data)       AUDIO_BASE(3, data)

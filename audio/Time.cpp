@@ -12,6 +12,7 @@
 audio::Time::Time(int64_t _valSec, int64_t _valNano) {
 	m_data = std::chrono::steady_clock::time_point(std::chrono::seconds(_valSec));
 	m_data += std::chrono::nanoseconds(_valNano);
+	//AUDIO_PRINT("sec= " << _valSec << " nano=" << _valNano << " ==> " << m_data);
 }
 audio::Time::Time(const std::chrono::steady_clock::time_point& _val) {
 	m_data = _val;
