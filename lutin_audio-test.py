@@ -41,7 +41,7 @@ def create(target, module_name):
 		'test/test_int8_16.cpp',
 		'test/test_int8_8.cpp'
 		])
-	my_module.add_module_depend(['audio', 'gtest', 'test-debug'])
+	my_module.add_depend(['audio', 'gtest', 'test-debug'])
 	return my_module
 
 

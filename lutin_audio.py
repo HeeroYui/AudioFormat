@@ -61,7 +61,7 @@ def create(target, module_name):
 		'audio/float_t.h',
 		'audio/double_t.h'
 		])
-	my_module.add_module_depend(['etk'])
+	my_module.add_depend(['etk'])
 	my_module.add_path(tools.get_current_path(__file__))
 	return my_module
 
