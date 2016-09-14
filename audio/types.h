@@ -7,6 +7,9 @@
 
 #include <etk/types.h>
 
+/**
+ * @brief Audio library namespace
+ */
 namespace audio {
 	class int8_8_t;
 	class int8_16_t;
