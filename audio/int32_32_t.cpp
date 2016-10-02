@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
-#include <audio/int32_32_t.h>
+#include <audio/debug.hpp>
+#include <audio/int32_32_t.hpp>
 
 audio::int32_32_t::int32_32_t(const audio::int8_8_t& _val) {
 	m_data = int32_t(_val.get()) << 24;

@@ -5,9 +5,9 @@
  */
 
 
-#include <audio/Time.h>
-#include <audio/Duration.h>
-#include <audio/debug.h>
+#include <audio/Time.hpp>
+#include <audio/Duration.hpp>
+#include <audio/debug.hpp>
 
 audio::Duration::Duration(int _val) {
 	m_data = std::chrono::nanoseconds(_val);

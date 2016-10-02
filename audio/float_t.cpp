@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
-#include <audio/float_t.h>
+#include <audio/debug.hpp>
+#include <audio/float_t.hpp>
 
 
 audio::float_t::float_t(const audio::int8_8_t& _val) {

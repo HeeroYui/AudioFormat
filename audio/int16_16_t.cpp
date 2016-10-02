@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/int16_16_t.h>
-#include <audio/debug.h>
+#include <audio/int16_16_t.hpp>
+#include <audio/debug.hpp>
 
 audio::int16_16_t::int16_16_t(const audio::int8_8_t& _val) {
 	m_data = int16_t(_val.get()) << 8;

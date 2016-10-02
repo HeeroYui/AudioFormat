@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
-#include <audio/double_t.h>
+#include <audio/debug.hpp>
+#include <audio/double_t.hpp>
 
 
 audio::double_t::double_t(const audio::int8_8_t& _val) {

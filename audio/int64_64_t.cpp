@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
-#include <audio/int64_64_t.h>
+#include <audio/debug.hpp>
+#include <audio/int64_64_t.hpp>
 
 audio::int64_64_t::int64_64_t(const audio::int8_8_t& _val) {
 	m_data = int64_t(_val.get()) << 56;

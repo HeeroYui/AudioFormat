@@ -4,7 +4,7 @@
  * @license APACHE v2.0 (see license file)
  */
 #pragma once
-#include <audio/types.h>
+#include <audio/types.hpp>
 
 namespace audio {
 	/**

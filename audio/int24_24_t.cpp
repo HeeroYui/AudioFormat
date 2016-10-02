@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/int24_24_t.h>
-#include <audio/debug.h>
+#include <audio/int24_24_t.hpp>
+#include <audio/debug.hpp>
 
 
 

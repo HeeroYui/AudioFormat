@@ -4,8 +4,8 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/debug.h>
-#include <audio/int8_8_t.h>
+#include <audio/debug.hpp>
+#include <audio/int8_8_t.hpp>
 
 
 audio::int8_8_t::int8_8_t(const audio::int8_8_t& _val) {

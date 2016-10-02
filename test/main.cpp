@@ -4,15 +4,15 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <test-debug/debug.h>
+#include <test-debug/debug.hpp>
 #include <gtest/gtest.h>
-#include <etk/etk.h>
-#include <etk/os/FSNode.h>
-#include <math.h>
+#include <etk/etk.hpp>
+#include <etk/os/FSNode.hpp>
+#include <cmath>
 #include <sstream>
 #include <unistd.h>
 #include <thread>
-#include <audio/types.h>
+#include <audio/types.hpp>
 
 
 

@@ -4,9 +4,9 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <audio/channel.h>
-#include <audio/debug.h>
-#include <etk/stdTools.h>
+#include <audio/channel.hpp>
+#include <audio/debug.hpp>
+#include <etk/stdTools.hpp>
 
 static const char* listValues[] = {
 	"unknow",

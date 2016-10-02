@@ -6,7 +6,7 @@
 #pragma once
 
 #include <string>
-#include <etk/types.h>
+#include <etk/types.hpp>
 #include <chrono>
 
 namespace audio {

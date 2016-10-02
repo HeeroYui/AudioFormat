@@ -7,7 +7,7 @@
 
 #include <string>
 #include <vector>
-#include <etk/types.h>
+#include <etk/types.hpp>
 
 #ifdef ETK_EXTERN_FRAMEWORK_ROS
 	#include <ros/ros.h>

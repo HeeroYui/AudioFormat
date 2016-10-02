@@ -44,22 +44,22 @@ def create(target, module_name):
 		'audio/double_t.cpp'
 		])
 	my_module.add_header_file([
-		'audio/types.h',
-		'audio/channel.h',
-		'audio/format.h',
-		'audio/Time.h',
-		'audio/Duration.h',
-		'audio/int8_8_t.h',
-		'audio/int8_16_t.h',
-		'audio/int16_16_t.h',
-		'audio/int16_32_t.h',
-		'audio/int24_24_t.h',
-		'audio/int24_32_t.h',
-		'audio/int32_32_t.h',
-		'audio/int32_64_t.h',
-		'audio/int64_64_t.h',
-		'audio/float_t.h',
-		'audio/double_t.h'
+		'audio/types.hpp',
+		'audio/channel.hpp',
+		'audio/format.hpp',
+		'audio/Time.hpp',
+		'audio/Duration.hpp',
+		'audio/int8_8_t.hpp',
+		'audio/int8_16_t.hpp',
+		'audio/int16_16_t.hpp',
+		'audio/int16_32_t.hpp',
+		'audio/int24_24_t.hpp',
+		'audio/int24_32_t.hpp',
+		'audio/int32_32_t.hpp',
+		'audio/int32_64_t.hpp',
+		'audio/int64_64_t.hpp',
+		'audio/float_t.hpp',
+		'audio/double_t.hpp'
 		])
 	my_module.add_depend(['etk'])
 	my_module.add_path(tools.get_current_path(__file__))

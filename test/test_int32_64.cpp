@@ -4,9 +4,9 @@
  * @license APACHE v2.0 (see license file)
  */
 
-#include <test-debug/debug.h>
+#include <test-debug/debug.hpp>
 #include <gtest/gtest.h>
-#include <audio/types.h>
+#include <audio/types.hpp>
 
 
 TEST(TestInt32_64, basicConstructorBase) {
