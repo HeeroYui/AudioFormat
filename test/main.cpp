@@ -10,7 +10,7 @@
 #include <etk/os/FSNode.hpp>
 #include <cmath>
 #include <sstream>
-#include <unistd.h>
+
 #include <thread>
 #include <audio/types.hpp>
 
