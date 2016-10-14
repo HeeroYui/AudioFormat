@@ -61,7 +61,9 @@ def configure(target, my_module):
 	    'audio/double_t.hpp'
 	    ])
 	my_module.add_depend([
-	    'etk'
+	    'etk',
+	    'elog',
+	    'echrono',
 	    ])
 	my_module.add_path(".")
 	return True
