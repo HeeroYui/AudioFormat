@@ -1,0 +1,166 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- For Mobile Devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+        <meta name="generator" content="Doxygen 1.8.12"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <title>audio: Basic audio types: framework/musicdsp/audio/audio/format.hpp Source File</title>
+        <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+        <script type="text/javascript" src="dynsections.js"></script>
+        <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+        <link href="doxygen.css" rel="stylesheet" type="text/css" />
+        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="doxy-boot.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">audio: Basic audio types 0.4.0</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Main&nbsp;Page</a></li>
+                        <li><a href="pages.html">Related&nbsp;Pages</a></li>
+                        <li><a href="namespaces.html">Namespaces</a></li>
+                        <li><a href="annotated.html">Classes</a></li>
+                        <li><a href="files.html">Files</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Link-libs<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://HeeroYui.github.io/lutin">lutin</a></li>
+                                <li><a href="http://atria-soft.github.io/ewol">ewol</a></li>
+                                <li><a href="http://atria-soft.github.io/etk">etk</a></li>
+                                <li><a href="http://atria-soft.github.io/ejson">ejson</a></li>
+                                <li><a href="http://atria-soft.github.io/exml">exml</a></li>
+                                <li><a href="http://atria-soft.github.io/esvg">esvg</a></li>
+                                <li><a href="http://atria-soft.github.io/egami">egami</a></li>
+                                <li><a href="http://atria-soft.github.io/gale">gale</a></li>
+                                <li><a href="http://atria-soft.github.io/ege">ege</a></li>
+                                <li><a href="http://atria-soft.github.io/elog">elog</a></li>
+                                <li><a href="http://atria-soft.github.io/ememory">ememory</a></li>
+                                <li><a href="http://atria-soft.github.io/enet">enet</a></li>
+                                <li><a href="http://atria-soft.github.io/eproperty">eproperty</a></li>
+                                <li><a href="http://atria-soft.github.io/esignal">esignal</a></li>
+                                <li><a href="http://atria-soft.github.io/zeus">zeus</a></li>
+                                <li><a href="http://atria-soft.github.io/audio-ess">audio-ess</a></li>
+                                <li><a href="http://musicdsp.github.io/audio">audio</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-drain">audio-drain</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-orchestra">audio-orchestra</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-river">audio-river</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div id="search-box" class="input-group">
+                        <div class="input-group-btn">
+                            <button aria-expanded="false" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-search"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Classes</a></li>
+                                <li><a href="#">Namespaces</a></li>
+                                <li><a href="#">Files</a></li>
+                                <li><a href="#">Functions</a></li>
+                                <li><a href="#">Variables</a></li>
+                                <li><a href="#">Typedefs</a></li>
+                                <li><a href="#">Enumerations</a></li>
+                                <li><a href="#">Enumerator</a></li>
+                                <li><a href="#">Friends</a></li>
+                                <li><a href="#">Macros</a></li>
+                                <li><a href="#">Pages</a></li>
+                            </ul>
+                        </div>
+                        <button id="search-close" type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                        <input id="search-field" class="form-control" accesskey="S" onkeydown="searchBox.OnSearchFieldChange(event);" placeholder="Search ..." type="text">
+                    </div>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+            <div class="content" id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 panel panel-default" style="padding-bottom: 15px;">
+                            <div style="margin-bottom: 15px;">
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_644e041c3a6521da7b27eba0e4eb2b95.html">framework</a></li><li class="navelem"><a class="el" href="dir_456cdebe5fccacd3d92f1f256b6c5043.html">musicdsp</a></li><li class="navelem"><a class="el" href="dir_d89f1fef683e836e4df74782fd977ee8.html">audio</a></li><li class="navelem"><a class="el" href="dir_8776d92a3e60f02dcceb57d2d5eb8e00.html">audio</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">format.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="format_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef ETK_EXTERN_FRAMEWORK_ROS</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;ros/ros.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &quot;audio_msg/AudioBuffer.h&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespaceaudio.html">audio</a> {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">format</a> {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            format_unknow         = audio_msg::AudioBuffer::FORMAT_UNKNOW,</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba5744831ec66821b80935b78728e09343">format_int8</a>           = audio_msg::AudioBuffer::FORMAT_INT8,</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba32edd87795fa1123c3ffe6b36bd1b6b2">format_int8_on_int16</a>  = audio_msg::AudioBuffer::FORMAT_INT8_ON_INT16,</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7ed7669dfdfed5d7ec2626caafbad9d7">format_int16</a>          = audio_msg::AudioBuffer::FORMAT_INT16,</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbab679591260a845a089829deb33337636">format_int16_on_int32</a> = audio_msg::AudioBuffer::FORMAT_INT16_ON_INT32,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba2dcbf35df01bf028c6edf9ae519bc2d4">format_int24</a>          = audio_msg::AudioBuffer::FORMAT_INT24,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad3566320cecb817d2b1157c95187fa02">format_int24_on_int32</a> = audio_msg::AudioBuffer::FORMAT_INT24_ON_INT32,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbacdb112aff61a792d380f17c8a85123e4">format_int32</a>          = audio_msg::AudioBuffer::FORMAT_INT32,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaae846080b3a77a320c3e31451422315a">format_int32_on_int64</a> = audio_msg::AudioBuffer::FORMAT_INT32_ON_INT64,</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaf096e0efb61d058a7dc3723c569d41e2">format_int64</a>          = audio_msg::AudioBuffer::FORMAT_INT64,</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad325d82420c80bc087f46a12edfa617a">format_float</a>          = audio_msg::AudioBuffer::FORMAT_FLOAT,</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7349a31609a817e9dce9f131762237bf">format_double</a>         = audio_msg::AudioBuffer::FORMAT_DOUBLE</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespaceaudio.html">audio</a> {</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">   31</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">format</a> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            format_unknow,</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba5744831ec66821b80935b78728e09343">   33</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba5744831ec66821b80935b78728e09343">format_int8</a>, </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba32edd87795fa1123c3ffe6b36bd1b6b2">   34</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba32edd87795fa1123c3ffe6b36bd1b6b2">format_int8_on_int16</a>, </div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7ed7669dfdfed5d7ec2626caafbad9d7">   35</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7ed7669dfdfed5d7ec2626caafbad9d7">format_int16</a>, </div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbab679591260a845a089829deb33337636">   36</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbab679591260a845a089829deb33337636">format_int16_on_int32</a>, </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba2dcbf35df01bf028c6edf9ae519bc2d4">   37</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba2dcbf35df01bf028c6edf9ae519bc2d4">format_int24</a>, </div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad3566320cecb817d2b1157c95187fa02">   38</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad3566320cecb817d2b1157c95187fa02">format_int24_on_int32</a>, </div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbacdb112aff61a792d380f17c8a85123e4">   39</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbacdb112aff61a792d380f17c8a85123e4">format_int32</a>, </div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaae846080b3a77a320c3e31451422315a">   40</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaae846080b3a77a320c3e31451422315a">format_int32_on_int64</a>, </div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaf096e0efb61d058a7dc3723c569d41e2">   41</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaf096e0efb61d058a7dc3723c569d41e2">format_int64</a>, </div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad325d82420c80bc087f46a12edfa617a">   42</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad325d82420c80bc087f46a12edfa617a">format_float</a>, </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7349a31609a817e9dce9f131762237bf">   43</a></span>&#160;            <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7349a31609a817e9dce9f131762237bf">format_double</a> </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceaudio.html">audio</a> {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::string getFormatString(<span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> _format);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> getFormatFromString(<span class="keyword">const</span> std::string&amp; _value);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::vector&lt;enum audio::format&gt; getListFormatFromString(<span class="keyword">const</span> std::string&amp; _value);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::ostream&amp; operator &lt;&lt;(std::ostream&amp; _os, <span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> _obj);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::ostream&amp; operator &lt;&lt;(std::ostream&amp; _os, const std::vector&lt;enum audio::format&gt;&amp; _obj);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint32_t getFormatBytes(<span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> _format);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// For ROS Interface:</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector&lt;uint8_t&gt; convertFormat(<span class="keyword">const</span> std::vector&lt;enum audio::format&gt;&amp; _obj);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::vector&lt;enum audio::format&gt; convertFormat(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; _obj);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint8_t convertFormat(<span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> _obj);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">enum</span> <a class="code" href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a> convertFormat(uint8_t _obj);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cba2dcbf35df01bf028c6edf9ae519bc2d4"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba2dcbf35df01bf028c6edf9ae519bc2d4">audio::format_int24</a></div><div class="ttdoc">Signed 24 bits on 24 bits (lower) </div><div class="ttdef"><b>Definition:</b> format.hpp:37</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbaf096e0efb61d058a7dc3723c569d41e2"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaf096e0efb61d058a7dc3723c569d41e2">audio::format_int64</a></div><div class="ttdoc">Signed 64 bits. </div><div class="ttdef"><b>Definition:</b> format.hpp:41</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbaae846080b3a77a320c3e31451422315a"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbaae846080b3a77a320c3e31451422315a">audio::format_int32_on_int64</a></div><div class="ttdoc">Signed 32 bits on 64 bits data (32 bit fixpoint value) </div><div class="ttdef"><b>Definition:</b> format.hpp:40</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cb"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cb">audio::format</a></div><div class="ttdeci">format</div><div class="ttdef"><b>Definition:</b> format.hpp:31</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbacdb112aff61a792d380f17c8a85123e4"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbacdb112aff61a792d380f17c8a85123e4">audio::format_int32</a></div><div class="ttdoc">Signed 32 bits. </div><div class="ttdef"><b>Definition:</b> format.hpp:39</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cba32edd87795fa1123c3ffe6b36bd1b6b2"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba32edd87795fa1123c3ffe6b36bd1b6b2">audio::format_int8_on_int16</a></div><div class="ttdoc">Signed 8 bits on 16 bits data (8 bit fixpoint value) </div><div class="ttdef"><b>Definition:</b> format.hpp:34</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbab679591260a845a089829deb33337636"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbab679591260a845a089829deb33337636">audio::format_int16_on_int32</a></div><div class="ttdoc">Signed 16 bits on 32 bits data (16 bit fixpoint value) </div><div class="ttdef"><b>Definition:</b> format.hpp:36</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbad3566320cecb817d2b1157c95187fa02"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad3566320cecb817d2b1157c95187fa02">audio::format_int24_on_int32</a></div><div class="ttdoc">Signed 24 bits on 32 bits (lower) </div><div class="ttdef"><b>Definition:</b> format.hpp:38</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cba7349a31609a817e9dce9f131762237bf"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7349a31609a817e9dce9f131762237bf">audio::format_double</a></div><div class="ttdoc">Floating point 64 bits (double precision) </div><div class="ttdef"><b>Definition:</b> format.hpp:43</div></div>
+<div class="ttc" id="namespaceaudio_html"><div class="ttname"><a href="namespaceaudio.html">audio</a></div><div class="ttdoc">Audio library namespace. </div><div class="ttdef"><b>Definition:</b> channel.hpp:70</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cba7ed7669dfdfed5d7ec2626caafbad9d7"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba7ed7669dfdfed5d7ec2626caafbad9d7">audio::format_int16</a></div><div class="ttdoc">Signed 16 bits. </div><div class="ttdef"><b>Definition:</b> format.hpp:35</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cba5744831ec66821b80935b78728e09343"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cba5744831ec66821b80935b78728e09343">audio::format_int8</a></div><div class="ttdoc">Signed 8 bits. </div><div class="ttdef"><b>Definition:</b> format.hpp:33</div></div>
+<div class="ttc" id="namespaceaudio_html_a2e69fde0e376bc9b0b6fa91fb93105cbad325d82420c80bc087f46a12edfa617a"><div class="ttname"><a href="namespaceaudio.html#a2e69fde0e376bc9b0b6fa91fb93105cbad325d82420c80bc087f46a12edfa617a">audio::format_float</a></div><div class="ttdoc">Floating point 32 bits (single precision) </div><div class="ttdef"><b>Definition:</b> format.hpp:42</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Mon Oct 24 2016 14:06:00 for audio: Basic audio types by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

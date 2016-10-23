@@ -1,0 +1,278 @@
+<!-- HTML header for doxygen 1.8.8-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- For Mobile Devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+        <meta name="generator" content="Doxygen 1.8.12"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <title>audio: Basic audio types: audio::int16_32_t Class Reference</title>
+        <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
+        <script type="text/javascript" src="dynsections.js"></script>
+        <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+        <link href="doxygen.css" rel="stylesheet" type="text/css" />
+        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="doxy-boot.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">audio: Basic audio types 0.4.0</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Main&nbsp;Page</a></li>
+                        <li><a href="pages.html">Related&nbsp;Pages</a></li>
+                        <li><a href="namespaces.html">Namespaces</a></li>
+                        <li><a href="annotated.html">Classes</a></li>
+                        <li><a href="files.html">Files</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Link-libs<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://HeeroYui.github.io/lutin">lutin</a></li>
+                                <li><a href="http://atria-soft.github.io/ewol">ewol</a></li>
+                                <li><a href="http://atria-soft.github.io/etk">etk</a></li>
+                                <li><a href="http://atria-soft.github.io/ejson">ejson</a></li>
+                                <li><a href="http://atria-soft.github.io/exml">exml</a></li>
+                                <li><a href="http://atria-soft.github.io/esvg">esvg</a></li>
+                                <li><a href="http://atria-soft.github.io/egami">egami</a></li>
+                                <li><a href="http://atria-soft.github.io/gale">gale</a></li>
+                                <li><a href="http://atria-soft.github.io/ege">ege</a></li>
+                                <li><a href="http://atria-soft.github.io/elog">elog</a></li>
+                                <li><a href="http://atria-soft.github.io/ememory">ememory</a></li>
+                                <li><a href="http://atria-soft.github.io/enet">enet</a></li>
+                                <li><a href="http://atria-soft.github.io/eproperty">eproperty</a></li>
+                                <li><a href="http://atria-soft.github.io/esignal">esignal</a></li>
+                                <li><a href="http://atria-soft.github.io/zeus">zeus</a></li>
+                                <li><a href="http://atria-soft.github.io/audio-ess">audio-ess</a></li>
+                                <li><a href="http://musicdsp.github.io/audio">audio</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-drain">audio-drain</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-orchestra">audio-orchestra</a></li>
+                                <li><a href="http://musicdsp.github.io/audio-river">audio-river</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div id="search-box" class="input-group">
+                        <div class="input-group-btn">
+                            <button aria-expanded="false" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-search"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Classes</a></li>
+                                <li><a href="#">Namespaces</a></li>
+                                <li><a href="#">Files</a></li>
+                                <li><a href="#">Functions</a></li>
+                                <li><a href="#">Variables</a></li>
+                                <li><a href="#">Typedefs</a></li>
+                                <li><a href="#">Enumerations</a></li>
+                                <li><a href="#">Enumerator</a></li>
+                                <li><a href="#">Friends</a></li>
+                                <li><a href="#">Macros</a></li>
+                                <li><a href="#">Pages</a></li>
+                            </ul>
+                        </div>
+                        <button id="search-close" type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                        <input id="search-field" class="form-control" accesskey="S" onkeydown="searchBox.OnSearchFieldChange(event);" placeholder="Search ..." type="text">
+                    </div>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+            <div class="content" id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 panel panel-default" style="padding-bottom: 15px;">
+                            <div style="margin-bottom: 15px;">
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceaudio.html">audio</a></li><li class="navelem"><a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classaudio_1_1int16__32__t-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">audio::int16_32_t Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="int16__32__t_8hpp_source.html">int16_32_t.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9cafac10873513a97e6030f9c12c35b8"><td class="memItemLeft" align="right" valign="top"><a id="a9cafac10873513a97e6030f9c12c35b8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (int32_t _value)</td></tr>
+<tr class="separator:a9cafac10873513a97e6030f9c12c35b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67ca5ccbe74db4ec06054c4ac68e2d6"><td class="memItemLeft" align="right" valign="top"><a id="ad67ca5ccbe74db4ec06054c4ac68e2d6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int8__8__t.html">audio::int8_8_t</a> &amp;_val)</td></tr>
+<tr class="separator:ad67ca5ccbe74db4ec06054c4ac68e2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c67017c4f2c275acd993ca25f8e8f16"><td class="memItemLeft" align="right" valign="top"><a id="a9c67017c4f2c275acd993ca25f8e8f16"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int8__16__t.html">audio::int8_16_t</a> &amp;_val)</td></tr>
+<tr class="separator:a9c67017c4f2c275acd993ca25f8e8f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0124663ac44b4d00e00cf86124a8811d"><td class="memItemLeft" align="right" valign="top"><a id="a0124663ac44b4d00e00cf86124a8811d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int16__16__t.html">audio::int16_16_t</a> &amp;_val)</td></tr>
+<tr class="separator:a0124663ac44b4d00e00cf86124a8811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4624d536a776ff1a289d3ac6cffb739"><td class="memItemLeft" align="right" valign="top"><a id="ad4624d536a776ff1a289d3ac6cffb739"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">audio::int16_32_t</a> &amp;_val)</td></tr>
+<tr class="separator:ad4624d536a776ff1a289d3ac6cffb739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9760a66dfdbe6fe449ca242269d5359d"><td class="memItemLeft" align="right" valign="top"><a id="a9760a66dfdbe6fe449ca242269d5359d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int24__24__t.html">audio::int24_24_t</a> &amp;_val)</td></tr>
+<tr class="separator:a9760a66dfdbe6fe449ca242269d5359d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b52e74137f7e810b7c1ec1df2eedd3"><td class="memItemLeft" align="right" valign="top"><a id="aa9b52e74137f7e810b7c1ec1df2eedd3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int24__32__t.html">audio::int24_32_t</a> &amp;_val)</td></tr>
+<tr class="separator:aa9b52e74137f7e810b7c1ec1df2eedd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171fa47e8b7d2bd9fbc745bab4b3687f"><td class="memItemLeft" align="right" valign="top"><a id="a171fa47e8b7d2bd9fbc745bab4b3687f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int32__32__t.html">audio::int32_32_t</a> &amp;_val)</td></tr>
+<tr class="separator:a171fa47e8b7d2bd9fbc745bab4b3687f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56be2ef9d579cfd5dfb1bb4d0a6f22d"><td class="memItemLeft" align="right" valign="top"><a id="af56be2ef9d579cfd5dfb1bb4d0a6f22d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int32__64__t.html">audio::int32_64_t</a> &amp;_val)</td></tr>
+<tr class="separator:af56be2ef9d579cfd5dfb1bb4d0a6f22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77dabda46437d7feb1c2706c291be8f"><td class="memItemLeft" align="right" valign="top"><a id="ab77dabda46437d7feb1c2706c291be8f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1int64__64__t.html">audio::int64_64_t</a> &amp;_val)</td></tr>
+<tr class="separator:ab77dabda46437d7feb1c2706c291be8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab100283b61525f835dcac90f2ff4d4b2"><td class="memItemLeft" align="right" valign="top"><a id="ab100283b61525f835dcac90f2ff4d4b2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1float__t.html">audio::float_t</a> &amp;_val)</td></tr>
+<tr class="separator:ab100283b61525f835dcac90f2ff4d4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb1c368ca0fdb51521089f32f3f51a0"><td class="memItemLeft" align="right" valign="top"><a id="a2bb1c368ca0fdb51521089f32f3f51a0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (const <a class="el" href="classaudio_1_1double__t.html">audio::double_t</a> &amp;_val)</td></tr>
+<tr class="separator:a2bb1c368ca0fdb51521089f32f3f51a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafff27552b3c917b5d55fb1d6788a16e"><td class="memItemLeft" align="right" valign="top"><a id="aafff27552b3c917b5d55fb1d6788a16e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>int16_32_t</b> (int64_t _value, int32_t _flotingPointPosition)</td></tr>
+<tr class="separator:aafff27552b3c917b5d55fb1d6788a16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f16ac201a60bd319d6f8c9a89e1283"><td class="memItemLeft" align="right" valign="top"><a id="a19f16ac201a60bd319d6f8c9a89e1283"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (int64_t _value, int32_t _flotingPointPosition)</td></tr>
+<tr class="separator:a19f16ac201a60bd319d6f8c9a89e1283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad08ca66aa4ca7541315829aff3f55152"><td class="memItemLeft" align="right" valign="top"><a id="ad08ca66aa4ca7541315829aff3f55152"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (int32_t _value)</td></tr>
+<tr class="separator:ad08ca66aa4ca7541315829aff3f55152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437cd5408eb778980847118a63170686"><td class="memItemLeft" align="right" valign="top"><a id="a437cd5408eb778980847118a63170686"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> () const</td></tr>
+<tr class="separator:a437cd5408eb778980847118a63170686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509764b153be5220236261ded7b6c40a"><td class="memItemLeft" align="right" valign="top"><a id="a509764b153be5220236261ded7b6c40a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>getFloat</b> () const</td></tr>
+<tr class="separator:a509764b153be5220236261ded7b6c40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54958e9b317a96d38cb354ad5a5d6857"><td class="memItemLeft" align="right" valign="top"><a id="a54958e9b317a96d38cb354ad5a5d6857"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getDouble</b> () const</td></tr>
+<tr class="separator:a54958e9b317a96d38cb354ad5a5d6857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6dd11a4a7c47c37c5103af19acfdb44"><td class="memItemLeft" align="right" valign="top"><a id="ad6dd11a4a7c47c37c5103af19acfdb44"></a>
+const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj)</td></tr>
+<tr class="separator:ad6dd11a4a7c47c37c5103af19acfdb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c0ede6308bde7da0808840da7012c6"><td class="memItemLeft" align="right" valign="top"><a id="ac1c0ede6308bde7da0808840da7012c6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:ac1c0ede6308bde7da0808840da7012c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db4449eaedc63a00e725568fe91af09"><td class="memItemLeft" align="right" valign="top"><a id="a3db4449eaedc63a00e725568fe91af09"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:a3db4449eaedc63a00e725568fe91af09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99ce8856cdcf9310637142a9f668c45"><td class="memItemLeft" align="right" valign="top"><a id="ae99ce8856cdcf9310637142a9f668c45"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">audio::int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:ae99ce8856cdcf9310637142a9f668c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad621e346dc60ffecfe5b338bc0b2155"><td class="memItemLeft" align="right" valign="top"><a id="aad621e346dc60ffecfe5b338bc0b2155"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">audio::int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:aad621e346dc60ffecfe5b338bc0b2155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434606be71dea3aec947e8e78a939769"><td class="memItemLeft" align="right" valign="top"><a id="a434606be71dea3aec947e8e78a939769"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">audio::int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:a434606be71dea3aec947e8e78a939769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2ef0faf93d7646fe44d37564f1f98d"><td class="memItemLeft" align="right" valign="top"><a id="a2b2ef0faf93d7646fe44d37564f1f98d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">audio::int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:a2b2ef0faf93d7646fe44d37564f1f98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375230d3f6f7e4ac07b9b579ee3d0d98"><td class="memItemLeft" align="right" valign="top"><a id="a375230d3f6f7e4ac07b9b579ee3d0d98"></a>
+const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj)</td></tr>
+<tr class="separator:a375230d3f6f7e4ac07b9b579ee3d0d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c1bb535a5e27b8df4e28dfc5e13bae"><td class="memItemLeft" align="right" valign="top"><a id="ae6c1bb535a5e27b8df4e28dfc5e13bae"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:ae6c1bb535a5e27b8df4e28dfc5e13bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba100b84da1e5ccc54b30f9eeacf36d0"><td class="memItemLeft" align="right" valign="top"><a id="aba100b84da1e5ccc54b30f9eeacf36d0"></a>
+const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj)</td></tr>
+<tr class="separator:aba100b84da1e5ccc54b30f9eeacf36d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f69e8d942abdf66c92968b31233341c"><td class="memItemLeft" align="right" valign="top"><a id="a6f69e8d942abdf66c92968b31233341c"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:a6f69e8d942abdf66c92968b31233341c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03060b5d13e834f9dc869507a3b76940"><td class="memItemLeft" align="right" valign="top"><a id="a03060b5d13e834f9dc869507a3b76940"></a>
+const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj)</td></tr>
+<tr class="separator:a03060b5d13e834f9dc869507a3b76940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bedd7ec4c1955246cfcb48f21e67f48"><td class="memItemLeft" align="right" valign="top"><a id="a1bedd7ec4c1955246cfcb48f21e67f48"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:a1bedd7ec4c1955246cfcb48f21e67f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55500ec3a9dffe4c1343f4de335262da"><td class="memItemLeft" align="right" valign="top"><a id="a55500ec3a9dffe4c1343f4de335262da"></a>
+const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj)</td></tr>
+<tr class="separator:a55500ec3a9dffe4c1343f4de335262da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f4072b45133b94bd556bfe1a973adc"><td class="memItemLeft" align="right" valign="top"><a id="ad0f4072b45133b94bd556bfe1a973adc"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (const <a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;_obj) const</td></tr>
+<tr class="separator:ad0f4072b45133b94bd556bfe1a973adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee6becdc21e2fc9b38e3c879d804433"><td class="memItemLeft" align="right" valign="top"><a id="abee6becdc21e2fc9b38e3c879d804433"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr class="separator:abee6becdc21e2fc9b38e3c879d804433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a8b6b9b00b6046345b9e303c6d4ec60"><td class="memItemLeft" align="right" valign="top"><a id="a0a8b6b9b00b6046345b9e303c6d4ec60"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int _unused)</td></tr>
+<tr class="separator:a0a8b6b9b00b6046345b9e303c6d4ec60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42787b7173916f3331bd4d5e7ec2b9c"><td class="memItemLeft" align="right" valign="top"><a id="aa42787b7173916f3331bd4d5e7ec2b9c"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> ()</td></tr>
+<tr class="separator:aa42787b7173916f3331bd4d5e7ec2b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfdb2b0f03ec024c6ff4a2fbefa2561"><td class="memItemLeft" align="right" valign="top"><a id="a6bfdb2b0f03ec024c6ff4a2fbefa2561"></a>
+<a class="el" href="classaudio_1_1int16__32__t.html">int16_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> (int _unused)</td></tr>
+<tr class="separator:a6bfdb2b0f03ec024c6ff4a2fbefa2561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+ |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10| 9| 8| 7| 6| 5| 4| 3| 2| 1| 0| +&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+&ndash;+ |BS| &gt; 1.0 | &lt; 1.0 | +&ndash;+-----------------------------------------&mdash;+--------------------------------------------&mdash;+ </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>framework/musicdsp/audio/audio/<a class="el" href="int16__32__t_8hpp_source.html">int16_32_t.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.8-->
+<!-- start footer part -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Mon Oct 24 2016 14:06:00 for audio: Basic audio types by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>
