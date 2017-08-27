@@ -24,29 +24,29 @@ static const char* listValues[] = {
 };
 static int32_t listValuesSize = sizeof(listValues)/sizeof(char*);
 
-std::ostream& audio::operator <<(std::ostream& _os, enum audio::format _obj) {
+etk::Stream& audio::operator <<(etk::Stream& _os, enum audio::format _obj) {
 	_os << getFormatString(_obj);
 	return _os;
 }
 
-std::ostream& audio::operator <<(std::ostream& _os, const std::vector<enum audio::format>& _obj) {
-	_os << std::string("{");
+etk::Stream& audio::operator <<(etk::Stream& _os, const etk::Vector<enum audio::format>& _obj) {
+	_os << etk::String("{");
 	for (size_t iii=0; iii<_obj.size(); ++iii) {
 		if (iii!=0) {
-			_os << std::string(";");
+			_os << etk::String(";");
 		}
 		_os << _obj[iii];
 	}
-	_os << std::string("}");
+	_os << etk::String("}");
 	return _os;
 }
 
-std::string audio::getFormatString(enum audio::format _value) {
+etk::String audio::getFormatString(enum audio::format _value) {
 	return listValues[_value];
 }
 
 
-enum audio::format audio::getFormatFromString(const std::string& _value) {
+enum audio::format audio::getFormatFromString(const etk::String& _value) {
 	for (int32_t iii=0; iii<listValuesSize; ++iii) {
 		if (_value == listValues[iii]) {
 			return static_cast<enum audio::format>(iii);
@@ -55,11 +55,11 @@ enum audio::format audio::getFormatFromString(const std::string& _value) {
 	return format_unknow;
 }
 
-std::vector<enum audio::format> audio::getListFormatFromString(const std::string& _value) {
-	std::vector<enum audio::format> out;
-	std::vector<std::string> list = etk::split(_value, ';');
+etk::Vector<enum audio::format> audio::getListFormatFromString(const etk::String& _value) {
+	etk::Vector<enum audio::format> out;
+	etk::Vector<etk::String> list = etk::split(_value, ';');
 	for (size_t iii=0; iii<list.size(); ++iii) {
-		out.push_back(getFormatFromString(list[iii]));
+		out.pushBack(getFormatFromString(list[iii]));
 	}
 	return out;
 }
@@ -93,10 +93,10 @@ uint32_t audio::getFormatBytes(audio::format _format) {
 
 
 namespace etk {
-	template<> std::string to_string<enum audio::format>(const enum audio::format& _variable) {
+	template<> etk::String toString<enum audio::format>(const enum audio::format& _variable) {
 		return listValues[_variable];
 	}
-	template <> bool from_string<enum audio::format>(enum audio::format& _variableRet, const std::string& _value) {
+	template <> bool from_string<enum audio::format>(enum audio::format& _variableRet, const etk::String& _value) {
 		for (int32_t iii=0; iii<listValuesSize; ++iii) {
 			if (_value == listValues[iii]) {
 				_variableRet = static_cast<enum audio::format>(iii);
@@ -108,18 +108,18 @@ namespace etk {
 	}
 }
 
-std::vector<uint8_t> audio::convertFormat(const std::vector<enum audio::format>& _obj) {
-	std::vector<uint8_t> out;
+etk::Vector<uint8_t> audio::convertFormat(const etk::Vector<enum audio::format>& _obj) {
+	etk::Vector<uint8_t> out;
 	for (size_t iii=0; iii<_obj.size(); ++iii) {
-		out.push_back(static_cast<uint8_t>(_obj[iii]));
+		out.pushBack(static_cast<uint8_t>(_obj[iii]));
 	}
 	return out;
 }
 
-std::vector<enum audio::format> audio::convertFormat(const std::vector<uint8_t>& _obj) {
-	std::vector<enum audio::format> out;
+etk::Vector<enum audio::format> audio::convertFormat(const etk::Vector<uint8_t>& _obj) {
+	etk::Vector<enum audio::format> out;
 	for (size_t iii=0; iii<_obj.size(); ++iii) {
-		out.push_back(static_cast<enum audio::format>(_obj[iii]));
+		out.pushBack(static_cast<enum audio::format>(_obj[iii]));
 	}
 	return out;
 }

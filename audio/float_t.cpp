@@ -171,8 +171,8 @@ audio::float_t audio::float_t::operator--(int _unused) {
 	return result;
 }
 
-std::ostream& audio::operator <<(std::ostream& _os, const audio::float_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << ":f]";
+etk::Stream& audio::operator <<(etk::Stream& _os, const audio::float_t& _obj) {
+	_os << "[" << etk::toString(_obj.get()) << ":f]";
 	return _os;
 }
 

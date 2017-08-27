@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <string>
+#include <etk/String.hpp>
 
 namespace audio {
 	enum format {
@@ -22,15 +22,15 @@ namespace audio {
 		format_float, //!< Floating point 32 bits (single precision)
 		format_double //!< Floating point 64 bits (double precision)
 	};
-	std::string getFormatString(enum audio::format _format);
-	enum audio::format getFormatFromString(const std::string& _value);
-	std::vector<enum audio::format> getListFormatFromString(const std::string& _value);
-	std::ostream& operator <<(std::ostream& _os, enum audio::format _obj);
-	std::ostream& operator <<(std::ostream& _os, const std::vector<enum audio::format>& _obj);
+	etk::String getFormatString(enum audio::format _format);
+	enum audio::format getFormatFromString(const etk::String& _value);
+	etk::Vector<enum audio::format> getListFormatFromString(const etk::String& _value);
+	etk::Stream& operator <<(etk::Stream& _os, enum audio::format _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const etk::Vector<enum audio::format>& _obj);
 	uint32_t getFormatBytes(enum audio::format _format);
 	// For ROS Interface:
-	std::vector<uint8_t> convertFormat(const std::vector<enum audio::format>& _obj);
-	std::vector<enum audio::format> convertFormat(const std::vector<uint8_t>& _obj);
+	etk::Vector<uint8_t> convertFormat(const etk::Vector<enum audio::format>& _obj);
+	etk::Vector<enum audio::format> convertFormat(const etk::Vector<uint8_t>& _obj);
 	uint8_t convertFormat(enum audio::format _obj);
 	enum audio::format convertFormat(uint8_t _obj);
 }

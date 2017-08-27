@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <string>
-#include <vector>
+#include <etk/String.hpp>
+#include <etk/Vector.hpp>
 #include <etk/types.hpp>
 
 namespace audio {
@@ -66,15 +66,15 @@ namespace audio {
 		channel_aux30,
 		channel_aux31,
 	};
-	std::string getChannelString(enum audio::channel _obj);
-	std::string getChannelString(const std::vector<enum audio::channel>& _obj);
-	enum audio::channel getChannelFromString(const std::string& _value);
-	std::vector<enum audio::channel> getListChannelFromString(const std::string& _value);
-	std::ostream& operator <<(std::ostream& _os, enum audio::channel _obj);
-	std::ostream& operator <<(std::ostream& _os, const std::vector<enum audio::channel>& _obj);
-	std::ostream& operator <<(std::ostream& _os, const std::vector<std::vector<enum audio::channel> >& _obj);
+	etk::String getChannelString(enum audio::channel _obj);
+	etk::String getChannelString(const etk::Vector<enum audio::channel>& _obj);
+	enum audio::channel getChannelFromString(const etk::String& _value);
+	etk::Vector<enum audio::channel> getListChannelFromString(const etk::String& _value);
+	etk::Stream& operator <<(etk::Stream& _os, enum audio::channel _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const etk::Vector<enum audio::channel>& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const etk::Vector<etk::Vector<enum audio::channel> >& _obj);
 	// For ROS Interface:
-	std::vector<uint8_t> convertChannel(const std::vector<enum audio::channel>& _obj);
-	std::vector<enum audio::channel> convertChannel(const std::vector<uint8_t>& _obj);
+	etk::Vector<uint8_t> convertChannel(const etk::Vector<enum audio::channel>& _obj);
+	etk::Vector<enum audio::channel> convertChannel(const etk::Vector<uint8_t>& _obj);
 }
 

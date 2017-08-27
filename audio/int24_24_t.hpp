@@ -40,6 +40,6 @@ namespace audio {
 			void set(int32_t _value);
 			int32_t get() const;
 	};
-	std::ostream& operator <<(std::ostream& _os, const audio::int24_24_t& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const audio::int24_24_t& _obj);
 }
 

@@ -107,6 +107,6 @@ namespace audio {
 			float_t& operator--();
 			float_t operator--(int _unused);
 	};
-	std::ostream& operator <<(std::ostream& _os, const audio::float_t& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const audio::float_t& _obj);
 }
 

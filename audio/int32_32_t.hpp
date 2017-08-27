@@ -111,6 +111,6 @@ namespace audio {
 			int32_32_t& operator--();
 			int32_32_t operator--(int _unused);
 	};
-	std::ostream& operator <<(std::ostream& _os, const audio::int32_32_t& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const audio::int32_32_t& _obj);
 }
 

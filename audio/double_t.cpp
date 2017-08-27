@@ -172,7 +172,7 @@ audio::double_t audio::double_t::operator--(int _unused) {
 	return result;
 }
 
-std::ostream& audio::operator <<(std::ostream& _os, const audio::double_t& _obj) {
-	_os << "[" << etk::to_string(_obj.get()) << ":d]";
+etk::Stream& audio::operator <<(etk::Stream& _os, const audio::double_t& _obj) {
+	_os << "[" << etk::toString(_obj.get()) << ":d]";
 	return _os;
 }

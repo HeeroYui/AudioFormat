@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <string>
+#include <etk/String.hpp>
 #include <etk/types.hpp>
 #include <echrono/echrono.hpp>
 #include <echrono/Steady.hpp>

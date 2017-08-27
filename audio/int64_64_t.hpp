@@ -106,6 +106,6 @@ namespace audio {
 			int64_64_t& operator--();
 			int64_64_t operator--(int _unused);
 	};
-	std::ostream& operator <<(std::ostream& _os, const audio::int64_64_t& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const audio::int64_64_t& _obj);
 }
 

@@ -10,7 +10,7 @@
 namespace audio {
 	int32_t getLogId();
 };
-// TODO : Review this problem of multiple intanciation of "std::stringbuf sb"
+// TODO : Review this problem of multiple intanciation of "etk::Stringbuf sb"
 #define AUDIO_BASE(info,data) ELOG_BASE(audio::getLogId(),info,data)
 
 #define AUDIO_PRINT(data)         AUDIO_BASE(-1, data)

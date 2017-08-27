@@ -113,6 +113,6 @@ namespace audio {
 			int24_32_t& operator--();
 			int24_32_t operator--(int _unused);
 	};
-	std::ostream& operator <<(std::ostream& _os, const audio::int24_32_t& _obj);
+	etk::Stream& operator <<(etk::Stream& _os, const audio::int24_32_t& _obj);
 }
 
