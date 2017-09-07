@@ -5,7 +5,7 @@
  */
 
 #include <test-debug/debug.hpp>
-#include <gtest/gtest.h>
+#include <etest/etest.hpp>
 #include <audio/types.hpp>
 
 TEST(TestInt64_64, basicConstructorBase) {

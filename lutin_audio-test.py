@@ -42,7 +42,7 @@ def configure(target, my_module):
 	    ])
 	my_module.add_depend([
 	    'audio',
-	    'gtest',
+	    'etest',
 	    'test-debug'
 	    ])
 	return True

@@ -5,13 +5,13 @@
  */
 
 #include <test-debug/debug.hpp>
-#include <gtest/gtest.h>
+#include <etest/etest.hpp>
 #include <etk/etk.hpp>
 #include <etk/os/FSNode.hpp>
 #include <cmath>
 #include <sstream>
 
-#include <thread>
+#include <ethread/Thread.hpp>
 #include <audio/types.hpp>
 
 
