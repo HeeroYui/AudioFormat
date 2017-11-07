@@ -16,12 +16,14 @@ TEST(TestInt32_64, basicConstructorBase) {
 
 TEST(TestInt32_64, basicConstructorSetOne) {
 	audio::int32_64_t typeBase(1, 0);
-	EXPECT_EQ(typeBase.get(), ((1LL<<32)));
+	int64_t ret = ((1LL<<32));
+	EXPECT_EQ(typeBase.get(), ret);
 }
 
 TEST(TestInt32_64, basicConstructorSetLessOne) {
 	audio::int32_64_t typeBase(-1, 0);
-	EXPECT_EQ(typeBase.get(), (-(1LL<<32)));
+	int64_t ret = (-(1LL<<32));
+	EXPECT_EQ(typeBase.get(), ret);
 }
 
 TEST(TestInt32_64, basicOperatorEqual) {
@@ -50,7 +52,8 @@ TEST(TestInt32_64, basicOperatorMultiplication) {
 	EXPECT_EQ(typeBase.get(), -35);
 	typeBase = audio::double_t(0.6);
 	typeBase *= audio::double_t(0.3);
-	EXPECT_EQ(typeBase.get(), 773094112LL);
+	int64_t ret = 773094112LL;
+	EXPECT_EQ(typeBase.get(), ret);
 }
 
 
@@ -182,7 +185,7 @@ TEST(TestInt32_64, basicOperatorDecrementPre) {
 	EXPECT_EQ(out.get(), audio::int32_64_t(9, 0).get());
 }
 
-#define RESULT_VALUE (1342177280LL)
+static const int64_t RESULT_VALUE = (1342177280LL);
 
 TEST(TestInt32_64, basicConstructorInt8_8) {
 	audio::int32_64_t out(audio::int8_8_t(5,4));

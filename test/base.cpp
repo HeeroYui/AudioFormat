@@ -157,7 +157,7 @@ TEST(TestBase, type_float_t) {
 
 TEST(TestBase, type_double_t) {
 	audio::double_t typeBase(16, 0);
-	EXPECT_EQ(int64_t(typeBase.get()), 16LL);
+	EXPECT_EQ(int64_t(typeBase.get()), 16);
 	EXPECT_EQ(typeBase.get(), 16.0); // Note : double point error
 	typeBase.set(-250.0);
 	EXPECT_EQ(typeBase.get(), -250.0);

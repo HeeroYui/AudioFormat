@@ -25,14 +25,14 @@ namespace audio {
 	class double_t;
 }
 
-#define INT24_MIN 0xFFFFFFFFFF800000LL
-#define INT24_MAX 0x00000000007FFFFFLL
+extern const int64_t INT24_MIN;
+extern const int64_t INT24_MAX;
 
-#define INT40_MIN 0xFFFFFF8000000000LL
-#define INT40_MAX 0x0000007FFFFFFFFFLL
+extern const int64_t INT40_MIN;
+extern const int64_t INT40_MAX;
 
-#define INT56_MIN 0xFFFF800000000000LL
-#define INT56_MAX 0x00007FFFFFFFFFFFLL
+extern const int64_t INT56_MIN;
+extern const int64_t INT56_MAX;
 
 #include <audio/int8_8_t.hpp>
 #include <audio/int8_16_t.hpp>

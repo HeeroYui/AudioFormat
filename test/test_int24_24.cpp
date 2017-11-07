@@ -55,7 +55,7 @@ TEST(TestInt24_24, basicOperatorMultiplication) {
 */
 
 
-#define RESULT_VALUE (2621440)
+static const int64_t RESULT_VALUE = 2621440;
 
 TEST(TestInt24_24, basicConstructorInt8_8) {
 	audio::int24_24_t out(audio::int8_8_t(5,4));

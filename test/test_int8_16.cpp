@@ -15,12 +15,12 @@ TEST(TestInt8_16, basicConstructorBase) {
 
 TEST(TestInt8_16, basicConstructorSetOne) {
 	audio::int8_16_t typeBase(1, 0);
-	EXPECT_EQ(typeBase.get(), ((1LL<<8)));
+	EXPECT_EQ(typeBase.get(), ((1<<8)));
 }
 
 TEST(TestInt8_16, basicConstructorSetLessOne) {
 	audio::int8_16_t typeBase(-1, 0);
-	EXPECT_EQ(typeBase.get(), (-(1LL<<8)));
+	EXPECT_EQ(typeBase.get(), (-(1<<8)));
 }
 
 TEST(TestInt8_16, basicOperatorEqual) {

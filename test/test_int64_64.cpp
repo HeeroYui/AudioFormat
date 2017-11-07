@@ -15,13 +15,15 @@ TEST(TestInt64_64, basicConstructorBase) {
 
 TEST(TestInt64_64, basicConstructorSetOne) {
 	// only one way to set the maximum value
+	int64_t ret = 0x7FFFFFFFFFFFFFFFLL;
 	audio::int64_64_t typeBase(0x7FFFFFFFFFFFFFFFLL, 63);
-	EXPECT_EQ(typeBase.get(), 0x7FFFFFFFFFFFFFFFLL);
+	EXPECT_EQ(typeBase.get(), ret);
 }
 
 TEST(TestInt64_64, basicConstructorSetLessOne) {
 	audio::int64_64_t typeBase(-1, 0);
-	EXPECT_EQ(typeBase.get(), (-(1LL<<63)));
+	int64_t ret =  (-(1LL<<63));
+	EXPECT_EQ(typeBase.get(),ret);
 }
 
 TEST(TestInt64_64, basicOperatorEqual) {
@@ -50,7 +52,8 @@ TEST(TestInt64_64, basicOperatorMultiplication) {
 	EXPECT_EQ(typeBase.get(), -35);
 	typeBase = audio::double_t(0.6);
 	typeBase *= audio::double_t(0.3);
-	EXPECT_EQ(typeBase.get(), 1660206965216520438LL);
+	uint64_t ret = 1660206965216520438LL;
+	EXPECT_EQ(typeBase.get(), ret);
 }
 
 TEST(TestInt64_64, basicOperatorCompareEquality) {
@@ -184,8 +187,7 @@ TEST(TestInt64_64, basicOperatorDecrementPre) {
 }
 */
 
-
-#define RESULT_VALUE (2882303761517117440LL)
+static const uint64_t RESULT_VALUE = (2882303761517117440LL);
 
 TEST(TestInt64_64, basicConstructorInt8_8) {
 	audio::int64_64_t out(audio::int8_8_t(5,4));

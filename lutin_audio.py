@@ -26,6 +26,7 @@ def get_version():
 def configure(target, my_module):
 	my_module.add_src_file([
 	    'audio/debug.cpp',
+	    'audio/types.cpp',
 	    'audio/channel.cpp',
 	    'audio/format.cpp',
 	    'audio/Time.cpp',

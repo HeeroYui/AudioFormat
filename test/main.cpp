@@ -17,10 +17,7 @@ extern "C" {
 
 
 int main(int _argc, const char** _argv) {
-	// init Google test :
-	::testing::InitGoogleTest(&_argc, const_cast<char **>(_argv));
-	// the only one init for etk:
-	etk::init(_argc, _argv);
+	etest::init(_argc, _argv);
 	for (int32_t iii=0; iii<_argc ; ++iii) {
 		etk::String data = _argv[iii];
 		if (    data == "-h"
