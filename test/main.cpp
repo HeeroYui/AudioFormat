@@ -7,7 +7,6 @@
 #include <test-debug/debug.hpp>
 #include <etest/etest.hpp>
 #include <etk/etk.hpp>
-#include <etk/os/FSNode.hpp>
 extern "C" {
 	#include <math.h>
 }
